@@ -35,7 +35,7 @@
                             <asp:TextBox ID="txtPassword" runat="server" CssClass="textbox" Width="180px" MaxLength="50"></asp:TextBox>
                         </td>
                         <td align="left" width="50%">
-                            <asp:Button ID="btnSave" runat="server" CssClass="button" Text="Change Password"
+                            <asp:Button ID="btnSave" runat="server" CssClass="button" Text="Change Password"  
                                 OnClientClick="return Validation();" OnClick="btnSave_Click" />
                         </td>
                     </tr>
