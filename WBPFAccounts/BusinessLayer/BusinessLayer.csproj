@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{00CC02F2-096A-48B4-8BE0-512C140A0A91}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessLayer</RootNamespace>
+    <AssemblyName>BusinessLayer</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.5.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounts\CautionMoneyReport.cs" />
+    <Compile Include="Accounts\clsGeneralFunctions.cs" />
+    <Compile Include="Accounts\clsGlobalConstants.cs" />
+    <Compile Include="Accounts\clsGlobalVariable.cs" />
+    <Compile Include="Accounts\clsMstGeneral.cs" />
+    <Compile Include="Accounts\clsSendMail.cs" />
+    <Compile Include="Accounts\clsSendMail_New.cs" />
+    <Compile Include="Accounts\CostCentreWiseReport.cs" />
+    <Compile Include="Accounts\MeetingRentExpense.cs" />
+    <Compile Include="Accounts\OpeningBalanceMaster.cs" />
+    <Compile Include="Accounts\PurchaseBillPayment.cs" />
+    <Compile Include="Accounts\RPTTrialBalance.cs" />
+    <Compile Include="Accounts\StreamGroup.cs" />
+    <Compile Include="Accounts\StudentFeesCollection.cs" />
+    <Compile Include="Accounts\StudentJournalTran.cs" />
+    <Compile Include="Accounts\StudentOpeningBal.cs" />
+    <Compile Include="Accounts\TrnDebitNoteHeader.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="Common\AgentMaster.cs" />
+    <Compile Include="Common\BirdPrice.cs" />
+    <Compile Include="Common\Block.cs" />
+    <Compile Include="Common\BusinessType.cs" />
+    <Compile Include="Common\Company.cs" />
+    <Compile Include="Common\FeeNotification.cs" />
+    <Compile Include="Common\MemberDocument.cs" />
+    <Compile Include="Common\NECCMemberMaster.cs" />
+    <Compile Include="Common\SMSCategoryMaster.cs" />
+    <Compile Include="Common\SMSMemberMaster.cs" />
+    <Compile Include="Common\SMSPayment.cs" />
+    <Compile Include="Common\District.cs" />
+    <Compile Include="Common\EggPrice.cs" />
+    <Compile Include="Common\Employee.cs" />
+    <Compile Include="Common\Excel.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\MailFunctionality.cs" />
+    <Compile Include="Common\MemberBill.cs" />
+    <Compile Include="Common\MemberDiscountConfig.cs" />
+    <Compile Include="Common\MemberFeesConfig.cs" />
+    <Compile Include="Common\MemberGroup.cs" />
+    <Compile Include="Common\MemberMaster.cs" />
+    <Compile Include="Common\MemberMasterPrint.cs" />
+    <Compile Include="Common\MemberPayment.cs" />
+    <Compile Include="Common\MembershipCategory.cs" />
+    <Compile Include="Common\MembershipCategoryFeesConfig.cs" />
+    <Compile Include="Common\MemberSMSCategory.cs" />
+    <Compile Include="Common\MonthMaster.cs" />
+    <Compile Include="Common\Report.cs" />
+    <Compile Include="Common\SemFeesGeneration.cs" />
+    <Compile Include="Common\FeesHeadMaster.cs" />
+    <Compile Include="Common\SMSTrigger.cs" />
+    <Compile Include="Common\State.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseOrder\PurchaseOrderEntry.cs" />
+    <Compile Include="Accounts\Tax.cs" />
+    <Compile Include="SMS\ApiConfiguration.cs" />
+    <Compile Include="SMS\BirdPrice.cs" />
+    <Compile Include="SMS\district.cs" />
+    <Compile Include="SMS\DoctorMaster.cs" />
+    <Compile Include="SMS\DoctorsSMSTrigger.cs" />
+    <Compile Include="SMS\EggPrice.cs" />
+    <Compile Include="SMS\GeneralMember.cs" />
+    <Compile Include="SMS\Member.cs" />
+    <Compile Include="SMS\MemberCategory.cs" />
+    <Compile Include="SMS\MemberNotification.cs" />
+    <Compile Include="SMS\SendNotificationSMS.cs" />
+    <Compile Include="SMS\SMSAPIConfig.cs" />
+    <Compile Include="SMS\SMSTrigger.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{BD2CEF0A-7013-4849-AC36-40BD15F2F3BA}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{9DF7E67D-1969-4C1F-998F-DDD0EC535313}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\AjaxControlToolkit.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

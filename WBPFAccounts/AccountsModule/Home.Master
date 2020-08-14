@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="True" CodeBehind="Home.master.cs" Inherits="AccountsModule.Home" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Home</title>
+    <link href="/Styles/reset.css" type="text/css" rel="Stylesheet" />
+    <link href="/Styles/style.css" type="text/css" rel="Stylesheet" />
+    <link href="/Styles/blue.css" type="text/css" rel="Stylesheet" />
+    <link href="/Styles/login-box.css" type="text/css" rel="Stylesheet" />
+    <link href="Styles/Control.css" type="text/css" rel="Stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="header">
+			<!-- logo -->
+			<div id="logo">
+				<h1><img src="/Images/logo.png" alt="Smooth Admin" /></h1>
+			</div>
+			<br />
+			<br />
+			<br />
+			<ul id="user">
+				
+			</ul>
+        <%--<div id="header-inner">
+				<div id="home">
+					<a href="" title="Home"></a>
+				</div>
+				<!-- quick -->
+				<div class="corner tl"></div>
+				<div class="corner tr"></div>
+			</div>
+		</div>--%>
+
+
+
+      <center>
+        <div id="content">
+            
+            <%--<div id="right">--%>
+                <div class="box" align="center">
+                    <center>
+                       
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+                            </asp:ContentPlaceHolder>
+                            
+                    </center>
+                </div>
+            <%--</div>--%>
+        
+        <div id="footer">
+			<p>Copyright &copy; 2011-2012 Campus Link. All Rights Reserved.</p>
+        </div>
+       </div> 
+    </center>
+    </form>
+</body>
+</html>

@@ -1,0 +1,579 @@
+﻿/* Provided by MyFreeTemplates.com */
+
+.RedirectCSS
+{
+	font-family: Arial, Tahoma, Verdana;
+	font-weight: bold;
+	font-size:12px;
+	color:Black;
+	text-decoration: none;
+}
+
+A.RedirectCSS:hover
+{
+	
+	font-family: Arial, Tahoma, Verdana;
+	font-weight: bold;
+	font-size:12px;
+	color:Maroon;
+	text-decoration: underline;
+}
+.sidetable {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #E9CD68;
+	border-right-color: #E9CD68;
+	border-bottom-color: #E9CD68;
+	border-left-color: #E9CD68;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+h1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size:12px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-decoration: none;
+}
+h4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-decoration: none;
+}
+/*li
+{
+	height:15px;
+	width:100%;
+	background-color:#E9CD68;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	font-variant: normal;
+}*/
+p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+.sidetable2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color: #FFFFFF;
+}
+.sidelinks {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #2271A0;
+	font-size:12px;
+	font-weight: bold;
+}
+.baseline {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color: #FFFFFF;
+}
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color: #000000;
+	font-weight: normal;
+}
+.sidelinks2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-size:12px;
+	font-weight: normal;
+	text-decoration: none;
+}
+.sidelinks2:a:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-size:12px;
+	font-weight: normal;
+	text-decoration: underline;
+}
+h2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #666666;
+}
+.producthdr {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #2271A0;
+	font-weight: bold;
+}
+/***********************  code by gopa *******/
+ a {
+	color: #000000;
+	text-decoration: none;
+	 font-size:12px;
+	 color:Black;
+	 font-weight:bold;
+}
+a:hover {
+	
+	 font-size:12px;
+	 color:#BB8615;
+	 font-weight:bold;
+	text-decoration: underline;
+}
+/**************************************************Header Design*************/
+.tableheader {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size: 14px;
+	font-weight: bold;
+}
+/***************************************Label Style************************/
+.aspxlabel{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size:12px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-decoration: none;
+}
+.lableBorder
+{	border-right: #7F9DB9 1px solid;
+	border-top: #7F9DB9 1px solid;
+	border-left: #7F9DB9 1px solid;
+	border-bottom: #7F9DB9 1px solid;
+	background-color:White;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	width:180px;
+	height:15px;
+	
+}
+/***************************************Text Box Style for different************************/
+
+.aspxTextSmall{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:45px;
+	height:15px;
+	text-align:right;
+}
+.aspxTextShort{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:180px;
+	height:15px;
+	
+}
+
+.aspxTextDate{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:90px;
+	height:15px;
+	
+}
+.aspxTextLong{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:230px;
+	height:15px;
+}
+.aspxFileLong{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	width:300px;
+	height:25px;
+    background-color:#FFFFFF;
+    text-decoration: none;    
+}
+
+.aspxMultimodeText{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:230px;
+	height:30px;
+}
+
+.aspxnarrationTypeText
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:350px;
+	height:100px;
+}
+.aspxnarrationSmallText
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:300px;
+	height:80px;
+}
+.aspxTextAmt{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:80px;
+	height:15px;
+	text-align:right;
+}
+/***************************************ComboBox Style************************/
+.aspxcombobox{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:180px;
+	height:15px;
+	}
+.aspxcomboboxSmall{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:65px;
+	height:15px;
+	}
+.aspxcomboboxMidi{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:100px;
+	height:15px;
+	}
+	/***************************************Button Style************************/
+.aspxbutton{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.TheamColour
+{
+	background-color:#FFF1C6;
+}
+/***************************************Button Style************************/
+.buttonStyle
+{
+	/*background-color: #E9CD68;*/
+	background-color: #E9CD68;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	color: #000000;
+	border-right: #000000 1px Groove;
+	border-top: #000000 1px Groove;
+	border-left: #000000 1px Groove;
+	border-bottom: #000000 1px Groove;
+	width:75px;
+	height:25px;
+	padding-bottom:3px;
+	padding-left:3px;
+	padding-right:3px;
+	padding-top:3px;
+}
+.buttonStyleSmall
+{
+	background-color: #E9CD68;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #000000;
+	border-right: #000000 1px Groove;
+	border-top: #000000 1px Groove;
+	border-left: #000000 1px Groove;
+	border-bottom: #000000 1px Groove;
+	width:50px;
+	height:22px;
+	padding-bottom:3px;
+	padding-left:3px;
+	padding-right:3px;
+	padding-top:3px;
+}
+/***************************************TD Front Style************************/
+
+.TDfront
+{
+	BORDER-RIGHT: #E9CD68 1px solid;
+	BORDER-TOP: #E9CD68 1px solid;
+	BORDER-LEFT: #E9CD68 1px solid; 
+	BORDER-BOTTOM: #E9CD68 1px solid; 
+	HEIGHT: 25px;
+	background:#E9CD68;
+	font-size: 14px;
+	font-weight: bold;
+	
+}
+.TDRow{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size:10px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: none;
+}
+.TDRowLarge
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #080800;
+	font-size:12px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-decoration: none;
+}
+/***************************************Table Border, TasbleBackground Colour Change************************/
+
+.TableBorder
+{
+	BORDER-RIGHT: #E9CD68 1px solid;
+	BORDER-TOP: #E9CD68 1px solid; 
+	BORDER-LEFT: #E9CD68 1px solid;
+	BORDER-BOTTOM: #E9CD68 1px solid;
+	background-color:#FFF1C6;
+}
+.TableBgColour
+{
+	background-color:#FFF1C6;
+}
+/*************************************got focus colour change textBox, ComboBox***********************/
+
+.textSmallfocus
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width: 45px;
+	height: 15px;
+	background-color: #E9CD68;
+	text-decoration: none;
+	border: Notset;
+	text-align:right;
+}
+.textLongfocus
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:230px;
+	height:15px;
+    background-color:#E9CD68;
+    text-decoration: none;    
+}
+.fileLongfocus
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	width:300px;
+	height:25px;
+    background-color:#E9CD68;
+    text-decoration: none;    
+}
+.textShortfocus{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:180px;
+	height:15px;
+    background-color:#E9CD68;
+    text-decoration: none;
+    border:Notset;
+     
+}
+
+.textDatefocus{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:90px;
+	height:15px;
+    background-color:#E9CD68;
+    text-decoration: none;
+    border:Notset;
+     
+}
+
+.textAmtfocus{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:80px;
+	height:15px;
+    background-color:#E9CD68;
+    text-decoration: none;
+    border:Notset;
+    text-align:right;
+}
+
+.txetMultimodefocus
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:230px;
+	height:30px;
+    background-color:#E9CD68;
+    text-decoration: none;
+    border:Notset;
+}
+.textNarrationTypefocus
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:400px;
+	height:100px;
+	background-color:#E9CD68;
+    text-decoration: none;
+    border:Notset;
+}
+.textNarrationSmallfocus
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:300px;
+	height:80px;
+	background-color:#E9CD68;
+    text-decoration: none;
+    border:Notset;
+}
+.comboBoxfocus
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:180px;
+	height:15px;
+	background-color:#E9CD68;
+}
+.comboBoxSmallfocus
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:65px;
+	height:15px;
+	background-color:#E9CD68;
+}
+.comboBoxMidifocus
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width:100px;
+	height:15px;
+	background-color:#E9CD68;
+}
+/*********************************End*******************************/
+
+/******************************For GrideView Style main Body, Header, Footer*************************************/
+.aspxGridViewBody
+{
+	background-color:white;
+	caption-side:top;
+	border:solid 1px #000000;
+	font-family:Verdana;
+	font-size:11px;
+	font-style:normal;
+	text-align:left;
+	padding-bottom:2px;
+	padding-left:2px;
+	padding-top:2px;
+}
+.aspxGridViewHeader
+{
+	background-color:#FFFFFF;
+	font-family:Verdana;
+	font-size:11px;
+	font-style:normal;
+	color:black;
+	padding-bottom:4px;
+	padding-left:4px;
+	padding-top:4px;
+	text-align:center;
+	
+	
+}
+.aspxGridViewFooter
+{	background-color:#FFFFFF;
+	border:solid 1px #000000;
+	font-family:Verdana;
+	font-size:14px;
+	font-style:normal;
+	font-weight:bold;
+	padding-bottom:2px;
+	padding-left:2px;
+	padding-top:2px;
+	text-align:right;
+	height:20px;	
+}
+.aspxGridPagerStyle
+{
+	text-align:center;
+}
+	
+/*********************************End*******************************/
+/*******************************mouse over colour change on gride view*******************/	
+.mousehover
+{
+	background-color:#FFF1C6;
+	font-family:Verdana;
+	font-size:12px;
+	font-style:normal;
+	color:white;
+}
+.alternate
+{
+	 background-color:#FFFFFF;
+}
+	
+
+.normal
+{
+	background-color:White;
+	 }
+	 /*********************************End*******************************/
+
+
+.show
+{
+      display: block;
+}
+
+.hide 
+{
+      display: none;
+}
+.panel {
+   display: block;
+}
+/**********************************************Tab panel, container Class***************************/
+.tabContainer
+{
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-style: normal;
+	font-weight: bold;
+	
+
+}
+.tabBackground
+{
+	background-color:#FFF1C6;
+}
+
+/*********************************Class for LEGEND***********************/
+
+.legendBold{
+	font-family: Verdana, Arial, Helvetica, sans-serif;    /*Front Size and style Bold*/
+	font-size: 13px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #BB8615;
+	text-decoration: none;
+}
+
+/*********************************Class for Tab Container***********************/
+
+.TabContainerBold{
+	font-family: Verdana, Arial, Helvetica, sans-serif;    /*Front Size and style Bold for Caption*/
+	font-size: 13px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-decoration: none;
+}
