@@ -199,6 +199,10 @@ namespace DataAccess.Common
         {
             using (DataManager oDm = new DataManager())
             {
+                if (membermaster.MemberId == 0)
+                    oDm.Add("@MemberId", SqlDbType.Int, DBNull.Value);
+                else
+                    oDm.Add("@MemberId", SqlDbType.Int, membermaster.MemberId);
                 if (membermaster.BlockId == 0)
                     oDm.Add("@BlockId", SqlDbType.Int, DBNull.Value);
                 else
@@ -239,7 +243,8 @@ namespace DataAccess.Common
                 else
                     oDm.Add("@BusinessTypeId", SqlDbType.Int, membermaster.BusinessTypeId);
                 oDm.CommandType = CommandType.StoredProcedure;
-                return oDm.ExecuteDataTable("MemberMaster_GetAll");
+                //return oDm.ExecuteDataTable("MemberMaster_GetAll");
+                return oDm.ExecuteDataTable("MemberMaster_GetAllNew");
             }
         }
         public static DataTable GetAllMemberWithAmount(Entity.Common.MemberMaster membermaster, int isMember = 2)

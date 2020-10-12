@@ -53,7 +53,13 @@ namespace AccountsModule.Common
                 if (!IsPostBack)
                 {
                     LoadCashBankLedger();
-                    LoadMemberList();
+                    int MemberId = 0;
+                    if (Request.QueryString["MemberId"] != null && Request.QueryString["MemberId"].Trim().Length > 0)
+                    {
+                        MemberId = Convert.ToInt32(Request.QueryString["MemberId"]);
+                    }
+                    
+                        LoadMemberList(MemberId);
                     btnPrint.Visible = false;
                     if (Request.QueryString["PaymentId"] != null && Request.QueryString["PaymentId"].Trim().Length > 0)
                     {
@@ -205,11 +211,12 @@ namespace AccountsModule.Common
             ddlCashBankLedger.Items.Insert(0, new ListItem("Select Ledger", "0"));
         }
 
-        private void LoadMemberList()
+        private void LoadMemberList(int MemberId)
         {
             BusinessLayer.Common.MemberMaster objMember = new BusinessLayer.Common.MemberMaster();
             Entity.Common.MemberMaster membermaster = new Entity.Common.MemberMaster();
 
+            membermaster.MemberId = MemberId;
             membermaster.BlockId = 0;
             membermaster.DistrictId = 0;
             membermaster.StateId = 0;
@@ -387,7 +394,8 @@ namespace AccountsModule.Common
         }
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            LoadMemberList();
+            int MemberId = 0;
+            LoadMemberList(MemberId);
         }
         private string GetAutoTransactionId()
         {

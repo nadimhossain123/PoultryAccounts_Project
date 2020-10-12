@@ -120,7 +120,8 @@ namespace DataAccess.Common
                 else { oDm.Add("@pIsNECCMember", SqlDbType.Bit, false); }
 
                 oDm.CommandType = CommandType.StoredProcedure;
-                return oDm.ExecuteDataTable("SMSMember_GetAll");
+                //return oDm.ExecuteDataTable("SMSMember_GetAll");
+                return oDm.ExecuteDataTable("SMSMember_GetAllNew");
             }
         }
 

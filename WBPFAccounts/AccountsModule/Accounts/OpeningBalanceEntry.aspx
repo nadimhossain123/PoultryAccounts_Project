@@ -21,7 +21,7 @@
         }
         function Validation2() {
             
-            return confirm('Are You Sure?');
+            return confirm('If you have modified any ledger opening balance this year,the changes will be lost and all the ledgers opening will be as per last year closing.Are You Sure?');
         }
     </script>
 </asp:Content>
@@ -81,8 +81,8 @@
                             OnClientClick="return Validation()" Width="80px"></asp:Button>&#160;&nbsp;
                                     <asp:Button ID="btnCancel" OnClick="btnCancel_Click" runat="server" Text="Reset"
                                         CssClass="button" Width="80px"></asp:Button>&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;
-                                    <asp:Button ID="btnCopyPrevClosing"  runat="server" Text="Copy Prev Year Closing" OnClientClick="return Validation2()" OnClick="btnCopyPrevClosing_Click"
-                                        CssClass="button" BackColor="Red" Width="150px"></asp:Button>
+                                    <asp:Button ID="btnCopyPrevClosing"  runat="server" Text="Copy Prev Year Closing Balance For All Ledgers" OnClientClick="return Validation2()" OnClick="btnCopyPrevClosing_Click"
+                                        CssClass="button" BackColor="Red" Width="300px"></asp:Button>
                     </td>
                 </tr>
 
@@ -109,7 +109,7 @@
                     <td align="center" colspan="3" width="90%">
                         <asp:GridView ID="dgvOpeningBalance" runat="server" AllowSorting="false" AllowPaging="True"
                             AutoGenerateColumns="False" Width="100%" PageSize="30" DataKeyNames="OpBalId"
-                            OnPageIndexChanging="dgvOpeningBalance_PageIndexChanging" OnRowEditing="dgvOpeningBalance_RowEditing">
+                            OnPageIndexChanging="dgvOpeningBalance_PageIndexChanging" OnRowEditing="dgvOpeningBalance_RowEditing" OnRowCommand="dgvOpeningBalance_RowCommand">
                             <Columns>
                                 <asp:TemplateField HeaderText="SL No.">
                                     <ItemTemplate><%#Container.DataItemIndex+1 %></ItemTemplate>
@@ -123,7 +123,14 @@
                                 <asp:TemplateField>
                                     <ItemTemplate>
                                         <asp:ImageButton ID="btnEdit" CommandName="Edit" ImageUrl="~/Images/edit_icon.gif"
-                                            runat="server" />
+                                            runat="server"  />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Copy Previous Closing">
+
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="lnkCopy" runat="server" Text="Copy" CommandArgument='<%#Bind("LedgerId") %>'
+                                        CommandName="Copy"></asp:LinkButton>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>

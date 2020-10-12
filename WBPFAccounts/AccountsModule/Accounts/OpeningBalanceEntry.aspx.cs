@@ -36,7 +36,12 @@ namespace AccountsModule.Accounts
                     PopulateOpeningBalance();
                 }
                 Message.Show = false;
+                if (Convert.ToInt32(Session["FinYrID"].ToString()) >= 7)   //this facility has been started from 2020-2021 Financial Year
+                    btnCopyPrevClosing.Visible = true;
+                else
+                    btnCopyPrevClosing.Visible = false;
             }
+
         }
 
         private void ResetControl()
@@ -112,13 +117,17 @@ namespace AccountsModule.Accounts
             strParams += Session["UserId"].ToString();
 
             DataView dv = new DataView(gf.GetDropDownColumnsBySP("UpdateOpeningBalanceforAllLedgers", strParams));
+            Message.IsSuccess = true;
             Message.Text = "All the previous closing are successfully copied as current opening ";
+            Message.Show = true;
             LoadOpeningBalance();
+           
         }
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             LoadOpeningBalance();
             Message.Show = false;
+
         }
 
         protected void LoadOpeningBalance()
@@ -143,18 +152,38 @@ namespace AccountsModule.Accounts
         protected void dgvOpeningBalance_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             dgvOpeningBalance.PageIndex = e.NewPageIndex;
+            Message.Show = false;
             LoadOpeningBalance();
         }
 
         protected void dgvOpeningBalance_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-
         }
 
         protected void dgvOpeningBalance_RowEditing(object sender, GridViewEditEventArgs e)
         {
+            
             OpBalId = Convert.ToInt32(dgvOpeningBalance.DataKeys[e.NewEditIndex].Value);
+            Message.Show = false;
             PopulateOpeningBalance();
+        }
+
+        protected void dgvOpeningBalance_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName.Equals("Copy"))
+            {
+                int LedgerId = Convert.ToInt32(e.CommandArgument.ToString());
+                strParams = Session["CompanyId"].ToString() + chr.ToString();
+                strParams += Session["FinYrID"].ToString() + chr.ToString();
+                strParams += Session["BranchID"].ToString() + chr.ToString();
+                strParams += Session["UserId"].ToString() + chr.ToString(); 
+                strParams += LedgerId.ToString();
+                DataView dv = new DataView(gf.GetDropDownColumnsBySP("UpdateOpeningBalanceByLedgerId", strParams));
+                Message.IsSuccess = true;
+                Message.Text = "For the particular ledger , previous closing is successfully copied as current opening ";
+                Message.Show = true;
+                LoadOpeningBalance();
+            }
         }
 
         protected void PopulateOpeningBalance()
@@ -172,6 +201,7 @@ namespace AccountsModule.Accounts
         protected void ddlLedger_SelectedIndexChanged(object sender, EventArgs e)
         {
             int LedgerId = Convert.ToInt32(ddlLedger.SelectedValue);
+            Message.Show = false;
             BusinessLayer.Accounts.OpeningBalanceMaster objOpBal = new OpeningBalanceMaster();
             DataView DV = new DataView(objOpBal.GetAll());
             DV.RowFilter = "LedgerId='"+ LedgerId+"' AND FinancialYrId ='" + int.Parse(Session["FinYrID"].ToString()) + "'";

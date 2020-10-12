@@ -99,7 +99,8 @@ namespace AccountsModule.Common
             else if (API_INDEX == "4")
                 API = string.Format("http://login.hivemsg.com/api/send_transactional_sms.php?username=u1348&msg_token=3PEV69&sender_id=WBPOLT&message={0}&mobile={1}", message, mobiles);
             else if (API_INDEX == "5")
-                API = string.Format("http://sms.fourfusiontechnologies.com/new/api/api_http.php?username=FOURFTECH&password=FourFM@2020&senderid=SAHYOG&to={0}&text={1}&route=Informative&type=text", mobiles, message);
+                // API = string.Format("http://sms.fourfusiontechnologies.com/new/api/api_http.php?username=FOURFTECH&password=FourFM@2020&senderid=SAHYOG&to={0}&text={1}&route=Informative&type=text", mobiles, message);
+                API = string.Format("http://sms.fourfusiontechnologies.com/new/api/api_http.php?username=FOURFTECH&password=FourFM@2020&senderid=WBPOLT&to={0}&text={1}&route=Informative&type=text", mobiles, message);
             else if (API_INDEX == "6")
                 API = string.Format("http://sms.afraconnect.com/api/mt/SendSMS?user=BISWA2K6@GMAIL.COM&password=9836634433&senderid=WBPOLT&channel=Trans&DCS=0&flashsms=0&number={0}&text={1}&route=20", mobiles, message);
             

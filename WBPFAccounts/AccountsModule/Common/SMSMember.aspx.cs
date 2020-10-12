@@ -31,7 +31,7 @@ namespace AccountsModule.Common
                 {
                     PopulateDropDownLists();
                     LoadMemberList();
-                    LoadSMSMember();
+                   // LoadSMSMember();
 
                     if (Request.QueryString["SMSMemberId"] != null && Request.QueryString["SMSMemberId"].Trim().Length > 0
                         && Request.QueryString["RedirectUrl"] != null && Request.QueryString["RedirectUrl"].Length > 0)
