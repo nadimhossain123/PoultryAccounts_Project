@@ -150,13 +150,15 @@ namespace AccountsModule.Common
             membermaster.MemberName = txtMemberName.Text.Trim();
             membermaster.MobileNo = txtMobile.Text.Trim();
             membermaster.BusinessTypeId = Convert.ToInt32(ddlBusinessType.SelectedValue.Trim());
-            
+            membermaster.MembershipMonth = Convert.ToInt32(ddlMonth.SelectedValue.Trim());
+            membermaster.MembershipYear = Convert.ToInt32(ddlYear.SelectedValue.Trim());
+
             DataTable dt = objMember.GetAll(membermaster);
             if (dt != null)
             {
                 DataView dv = new DataView(dt);
                 dv.RowFilter = "IsApproved Is Not Null";
- 
+
                 dgvMemberMaster.DataSource = dv;
                 dgvMemberMaster.DataBind();
                 lblTotalMemberCount.Text = Server.HtmlDecode("<b>Total Member Count: " + dv.ToTable().Rows.Count.ToString() + "</b>");
@@ -168,7 +170,7 @@ namespace AccountsModule.Common
             int MemberId = Convert.ToInt32(dgvMemberMaster.DataKeys[e.NewEditIndex].Values["MemberId"]);
             Response.Redirect("AddEditMemberMaster.aspx?id=" + MemberId + "&Back=MemberMasterInfo.aspx");
         }
-                
+
         protected void dgvMemberMaster_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             dgvMemberMaster.PageIndex = e.NewPageIndex;

@@ -409,6 +409,17 @@ namespace Entity.Common
             get { return gSTNo; }
             set { gSTNo = value; }
         }
-        public bool IsExecutiveMember { get; set; }
+
+		public int MembershipMonth
+		{
+			get;
+			set;
+		}
+		public int MembershipYear
+		{
+			get;
+			set;
+		}
+		public bool IsExecutiveMember { get; set; }
     }
 }

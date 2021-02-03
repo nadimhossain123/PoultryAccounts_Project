@@ -115,6 +115,16 @@ namespace BusinessLayer.Common
         {
             return DataAccess.Common.MemberMaster.DevelopmentMemberGetAll(StateId, DistrictId, BlockId, CategoryId, MemberName, MobileNo, BusinessTypeId, FromDate,ToDate);
         }
+
+        public DataTable DevelopmentMemberUpdateGetAll(int StateId, int DistrictId, int BlockId, int CategoryId, string MemberName, string MobileNo, int BusinessTypeId, DateTime FromDate, DateTime ToDate)
+        {
+            return DataAccess.Common.MemberMaster.DevelopmentMemberUpdateGetAll(StateId, DistrictId, BlockId, CategoryId, MemberName, MobileNo, BusinessTypeId, FromDate, ToDate);
+        }
+        public DataTable RenewalMemberUpdateGetAll(int StateId, int DistrictId, int BlockId, int CategoryId, string MemberName, string MobileNo, int BusinessTypeId, DateTime FromDate, DateTime ToDate)
+        {
+            return DataAccess.Common.MemberMaster.RenewalMemberUpdateGetAll(StateId, DistrictId, BlockId, CategoryId, MemberName, MobileNo, BusinessTypeId, FromDate, ToDate);
+        }
+
         public DataTable RenewalMemberGetAll(int StateId, int DistrictId, int BlockId, int CategoryId, string MemberName, string MobileNo, int BusinessTypeId, DateTime FromDate, DateTime ToDate)
         {
             return DataAccess.Common.MemberMaster.RenewalMemberGetAll(StateId, DistrictId, BlockId, CategoryId, MemberName, MobileNo, BusinessTypeId, FromDate, ToDate);

@@ -84,6 +84,8 @@
                 <td align="right">
                     <asp:Button ID="btnDownload" runat="server" CssClass="button" Text="Download Bill"
                         OnClick="btnDownload_Click" />
+                    <asp:Button ID="btnDownload_WithOutOpening" runat="server" CssClass="button" Text="Download Bill Without Opening"
+                        OnClick="btnDownload_WithOutOpening_Click" />
                 </td>
             </tr>
         </table>

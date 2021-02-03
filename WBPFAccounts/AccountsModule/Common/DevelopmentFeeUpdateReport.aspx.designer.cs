@@ -11,17 +11,17 @@ namespace AccountsModule.Common
 {
 
 
-    public partial class MemberRenewalFeesDetails
+    public partial class DevelopmentFeeUpdateReport
     {
 
         /// <summary>
-        /// ToolScript1 control.
+        /// toolScript1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ToolkitScriptManager ToolScript1;
+        protected global::AjaxControlToolkit.ToolkitScriptManager toolScript1;
 
         /// <summary>
         /// Message control.
@@ -33,49 +33,94 @@ namespace AccountsModule.Common
         protected global::CollegeERP.UserControl.Message Message;
 
         /// <summary>
-        /// ddlMember control.
+        /// ddlState control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox ddlMember;
+        protected global::System.Web.UI.WebControls.DropDownList ddlState;
 
         /// <summary>
-        /// ddlFromMonth control.
+        /// ddlDistrict control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFromMonth;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDistrict;
 
         /// <summary>
-        /// ddlToMonth control.
+        /// ddlBlock control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlToMonth;
+        protected global::System.Web.UI.WebControls.DropDownList ddlBlock;
 
         /// <summary>
-        /// btnSearch control.
+        /// ddlMembershipCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearch;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMembershipCategory;
 
         /// <summary>
-        /// dgvMemberRenewalFee control.
+        /// txtMemberName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvMemberRenewalFee;
+        protected global::System.Web.UI.WebControls.TextBox txtMemberName;
+
+        /// <summary>
+        /// txtMobile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMobile;
+
+        /// <summary>
+        /// ddlBusinessType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlBusinessType;
+
+        /// <summary>
+        /// btnSearch0 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearch0;
+
+        /// <summary>
+        /// lblTotalMemberCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalMemberCount;
+
+        /// <summary>
+        /// dgvMemberMaster control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView dgvMemberMaster;
 
         /// <summary>
         /// btnDownload control.
@@ -87,12 +132,12 @@ namespace AccountsModule.Common
         protected global::System.Web.UI.WebControls.Button btnDownload;
 
         /// <summary>
-        /// btnDownload_WithOutOpening control.
+        /// btnPrint control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDownload_WithOutOpening;
+        protected global::System.Web.UI.WebControls.Button btnPrint;
     }
 }

@@ -74,6 +74,42 @@
                             <asp:TextBox ID="txtMobile" runat="server" CssClass="textbox" MaxLength="20"
                                 Width="150px"></asp:TextBox>
                         </td>
+
+                          <td align="right"><asp:DropDownList ID="ddlMonth" runat="server"  CssClass="dropdownList"
+                                Width="160px">
+                              <asp:listitem value="0" Text="MONTH-ALL"></asp:listitem>
+                              <asp:listitem value="01" Text="JAN"></asp:listitem>
+                              <asp:listitem value="02" Text="FEB"></asp:listitem>
+                              <asp:listitem value="03" Text="MAR"></asp:listitem>
+                              <asp:listitem value="04" Text="APR"></asp:listitem>
+                              <asp:listitem value="05" Text="MAY"></asp:listitem>
+                              <asp:listitem value="06" Text="JUN"></asp:listitem>
+                              <asp:listitem value="07" Text="JULY"></asp:listitem>
+                              <asp:listitem value="08" Text="AUG"></asp:listitem>
+                              <asp:listitem value="09" Text="SEP"></asp:listitem>
+                              <asp:listitem value="10" Text="OCT"></asp:listitem>
+                              <asp:listitem value="10" Text=" NOV"></asp:listitem>
+                              <asp:listitem value="12" Text="DEC"></asp:listitem>
+                            </asp:DropDownList></td>
+                        <td align="right"><asp:DropDownList ID="ddlYear" runat="server"  CssClass="dropdownList"
+                                Width="160px">
+                              <asp:listitem value="0" Text="YEAR-ALL"></asp:listitem>
+                              <asp:listitem value="2021" Text="2021"></asp:listitem>
+                              <asp:listitem value="2020" Text="2020"></asp:listitem>
+                              <asp:listitem value="2019" Text="2019"></asp:listitem>
+                              <asp:listitem value="2018" Text="2018"></asp:listitem>
+                              <asp:listitem value="2017" Text="2017"></asp:listitem>
+                              <asp:listitem value="2016" Text="2016"></asp:listitem>
+                              <asp:listitem value="2015" Text="2015"></asp:listitem>
+                              <asp:listitem value="2014" Text="2014"></asp:listitem>
+                              <asp:listitem value="2013" Text="2013"></asp:listitem>
+                            <asp:listitem value="2012" Text="2012"></asp:listitem>
+                            <asp:listitem value="2011" Text="2011"></asp:listitem>
+                            <asp:listitem value="2010" Text="2010"></asp:listitem>
+                            </asp:DropDownList></td>
+                       
+
+
                     </tr>
                     <tr>
                         <td align="right" colspan="8">

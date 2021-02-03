@@ -30,16 +30,25 @@ namespace AccountsModule.Common
             get { return Convert.ToInt32(ViewState["ToMonth"]); }
             set { ViewState["ToMonth"] = value; }
         }
+        public int WithOutOpening
+        {
+            get { return Convert.ToInt32(ViewState["WithOutOpening"]); }
+            set { ViewState["WithOutOpening"] = value; }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 if ((Request.QueryString["FromMonth"] != null && Request.QueryString["FromMonth"].ToString().Trim().Length > 0)
-                    && (Request.QueryString["ToMonth"] != null && Request.QueryString["ToMonth"].ToString().Trim().Length > 0))
+                    && (Request.QueryString["ToMonth"] != null && Request.QueryString["ToMonth"].ToString().Trim().Length > 0)
+                    && (Request.QueryString["WithOutOpening"] != null && Request.QueryString["WithOutOpening"].ToString().Trim().Length > 0)
+                    )
                 {
                     MemberId = Convert.ToInt32(Request.QueryString["MemberId"].ToString().Trim());
                     FromMonth = Convert.ToInt32(Request.QueryString["FromMonth"].ToString().Trim());
                     ToMonth = Convert.ToInt32(Request.QueryString["ToMonth"].ToString().Trim());
+                    WithOutOpening = Convert.ToInt32(Request.QueryString["WithOutOpening"].ToString().Trim());
                     LoadBillDetails();
                 }
             }
@@ -48,7 +57,7 @@ namespace AccountsModule.Common
         protected void LoadBillDetails()
         {
             BusinessLayer.Common.MemberFeesConfig objMember = new BusinessLayer.Common.MemberFeesConfig();
-            DataSet ds = objMember.MemberRenewalFeeGetAll(MemberId, FinYrId, FromMonth, ToMonth);
+            DataSet ds = objMember.MemberRenewalFeeGetAll(MemberId, FinYrId, FromMonth, ToMonth,WithOutOpening);
             DataTable dt = ds.Tables[0]; //Member Details
             DataTable dtBill = ds.Tables[1]; // Bill Details Month Wise
             lblOpeningBalance.Text = ds.Tables[2].Rows[0]["OpeningBalance"].ToString();

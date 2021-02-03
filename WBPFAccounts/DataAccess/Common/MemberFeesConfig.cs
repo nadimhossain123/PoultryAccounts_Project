@@ -45,7 +45,7 @@ namespace DataAccess.Common
             }
         }
 
-        public static DataSet MemberRenewalFeeGetAll(int MemberId,int FinYrId, int FromMonth, int ToMonth)
+        public static DataSet MemberRenewalFeeGetAll(int MemberId,int FinYrId, int FromMonth, int ToMonth,int WithOutOpening)
         {
             using (DataManager oDm = new DataManager())
             {
@@ -55,13 +55,15 @@ namespace DataAccess.Common
                 else oDm.Add("@pFromMonth", SqlDbType.Int, FromMonth);
                 if(ToMonth==0) oDm.Add("@pToMonth", SqlDbType.Int, DBNull.Value);
                 else oDm.Add("@pToMonth", SqlDbType.Int, ToMonth);
+                if (WithOutOpening == 0) oDm.Add("@pWithOutOpening", SqlDbType.Int, DBNull.Value);
+                else oDm.Add("@pWithOutOpening", SqlDbType.Int, WithOutOpening);
                 oDm.CommandType = CommandType.StoredProcedure;
                 DataSet ds = new DataSet();
                 return oDm.GetDataSet("usp_MemberRenewalFee_GetAll",ref ds,"Table");
             }
         }
 
-        public static DataSet MemberDevelopmentFeeAllMonthGetAll(int MemberId, int FinYrId, int FromMonth, int ToMonth)
+        public static DataSet MemberDevelopmentFeeAllMonthGetAll(int MemberId, int FinYrId, int FromMonth, int ToMonth, int WithOutOpening)
         {
             using (DataManager oDm = new DataManager())
             {
@@ -71,6 +73,8 @@ namespace DataAccess.Common
                 else oDm.Add("@pFromMonth", SqlDbType.Int, FromMonth);
                 if (ToMonth == 0) oDm.Add("@pToMonth", SqlDbType.Int, DBNull.Value);
                 else oDm.Add("@pToMonth", SqlDbType.Int, ToMonth);
+                if (WithOutOpening == 0) oDm.Add("@pWithOutOpening", SqlDbType.Int, DBNull.Value);
+                else oDm.Add("@pWithOutOpening", SqlDbType.Int, WithOutOpening);
                 oDm.CommandType = CommandType.StoredProcedure;
                 DataSet ds = new DataSet();
                 return oDm.GetDataSet("usp_MemberDevelopmentFeeAllMonth_GetAll",ref ds,"Table");

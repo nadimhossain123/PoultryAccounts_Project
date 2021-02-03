@@ -19,10 +19,12 @@
             <li id="liMonthlyDevelopmentBill" runat="server"><a href="/Common/MonthlyDevelopmentFeeBill.aspx">Monthly Development Fee Bill</a></li>
             <li id="liMemberDevelopmentFeesDetails" runat="server"><a href="/Common/MemberDevelopmentFeesDetails.aspx">Development Fee Invoice</a></li>
             <li id="liDevelopmentMemberReport" runat="server"><a href="/Common/DevelopmentFeeMemberReport.aspx">Development Fee Report</a></li>
-            <li id="liDevelopmentFeeAdjustment" runat="server" class="last"><a href="/Common/DevelopmentFeeAdjustment.aspx">Development Fee Adjustment </a></li>
-            <li id="liDevelopmentFeePaymentReport" runat="server" class="last"><a href="/Common/DevelopmentFeePaymentReport.aspx">Development Fee Payment Report</a></li>
-            <li id="liDevelopmentFeeUpdate" runat="server" class="last"><a href="/Common/UpdateMenberDevelopmentFees.aspx">Prev Month Development Fees Update </a></li>
-            <li id="liRenewalFeeUpdate" runat="server" class="last"><a href="/Common/UpdateMemberRenewalFees.aspx">Prev Month Renewal Fees Update </a></li>
+            <li id="liDevelopmentFeeAdjustment" runat="server" ><a href="/Common/DevelopmentFeeAdjustment.aspx">Development Fee Adjustment </a></li>
+            <li id="liDevelopmentFeePaymentReport" runat="server" ><a href="/Common/DevelopmentFeePaymentReport.aspx">Development Fee Payment Report</a></li>
+            <li id="liDevelopmentFeeUpdate" runat="server" ><a href="/Common/UpdateMenberDevelopmentFees.aspx">Prev Month Development Fees Update </a></li>
+            <li id="li2" runat="server"><a href="/Common/DevelopmentFeeUpdateReport.aspx">Development Fee Update Report</a></li>
+            <li id="liRenewalFeeUpdate" runat="server"><a href="/Common/UpdateMemberRenewalFees.aspx">Prev Month Renewal Fees Update </a></li>
+            <li id="li3" runat="server" class="last"><a href="/Common/RenewalFeeUpdateReport.aspx">Renewal Fee Update Report</a></li>
         </ul>
     </li>
     <li id="liMasters" runat="server"><a href="" title="Settings"><span class="icon">

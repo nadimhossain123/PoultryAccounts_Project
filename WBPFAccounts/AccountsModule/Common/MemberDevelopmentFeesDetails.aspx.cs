@@ -40,6 +40,7 @@ namespace AccountsModule.Common
                     LoadMembers();
                     //btnSendEmail.Visible = false;
                     btnDownload.Visible = false;
+                    btnDownload_WithOutOpening.Visible = false;
                     Message.Show = false;
                     (ddlFromMonth.SelectedValue) = "4";
                     (ddlToMonth.SelectedValue) = "3";
@@ -98,13 +99,14 @@ namespace AccountsModule.Common
         private void LoadDevelopmentFeeList()
         {
             BusinessLayer.Common.MemberFeesConfig objMember = new BusinessLayer.Common.MemberFeesConfig();
-            DataSet ds = objMember.MemberDevelopmentFeeAllMonthGetAll(MemberId, FinYrId, FromMonth, ToMonth);
+            DataSet ds = objMember.MemberDevelopmentFeeAllMonthGetAll(MemberId, FinYrId, FromMonth, ToMonth,0);
             DataTable dt = ds.Tables[1];
             if (dt.Rows.Count > 0)
             {
                 dgvMemberDevelopmentFee.DataSource = dt;
                 dgvMemberDevelopmentFee.DataBind();
                 btnDownload.Visible = true;
+                btnDownload_WithOutOpening.Visible = true;
             }
             else
             {
@@ -116,7 +118,13 @@ namespace AccountsModule.Common
         {
             //Page.ClientScript.RegisterStartupScript(this.GetType(), "onclick", "javascript:alert('member_development_bill.aspx?MemberId=" + MemberId + "&FinYrId=" + FinYrId + "&FromMonth=" + FromMonth + "&ToMonth=" + ToMonth + "')", true);
             //ScriptManager.RegisterStartupScript(this, this.GetType(), "onclick", "javascript:window.open('member_development_bill.aspx?MemberId=" + MemberId + "&FinYrId=" + FinYrId + "&FromMonth=" + FromMonth + "&ToMonth=" + ToMonth + "','_blank','height=700px,width=1000px,scrollbars=1');", true);
-            ClientScript.RegisterStartupScript(GetType(), "OnClick", "openpopup('member_development_bill.aspx?MemberId=" + MemberId + "&FinYrId=" + FinYrId + "&FromMonth=" + FromMonth + "&ToMonth=" + ToMonth + "');", true);
+            ClientScript.RegisterStartupScript(GetType(), "OnClick", "openpopup('member_development_bill.aspx?MemberId=" + MemberId + "&FinYrId=" + FinYrId + "&FromMonth=" + FromMonth + "&ToMonth=" + ToMonth + "&WithOutOpening=" + 0 + "');", true);
+        }
+        protected void btnDownload_WithOutOpening_Click(object sender, EventArgs e)
+        {
+            //Page.ClientScript.RegisterStartupScript(this.GetType(), "onclick", "javascript:alert('member_development_bill.aspx?MemberId=" + MemberId + "&FinYrId=" + FinYrId + "&FromMonth=" + FromMonth + "&ToMonth=" + ToMonth + "')", true);
+            //ScriptManager.RegisterStartupScript(this, this.GetType(), "onclick", "javascript:window.open('member_development_bill.aspx?MemberId=" + MemberId + "&FinYrId=" + FinYrId + "&FromMonth=" + FromMonth + "&ToMonth=" + ToMonth + "','_blank','height=700px,width=1000px,scrollbars=1');", true);
+            ClientScript.RegisterStartupScript(GetType(), "OnClick", "openpopup('member_development_bill.aspx?MemberId=" + MemberId + "&FinYrId=" + FinYrId + "&FromMonth=" + FromMonth + "&ToMonth=" + ToMonth + "&WithOutOpening=" + 1 + "');", true);
         }
 
         protected void dgvMemberDevelopmentFee_RowDataBound(object sender, GridViewRowEventArgs e)

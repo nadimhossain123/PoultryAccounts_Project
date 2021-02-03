@@ -243,6 +243,17 @@ namespace DataAccess.Common
                 else
                     oDm.Add("@BusinessTypeId", SqlDbType.Int, membermaster.BusinessTypeId);
                 oDm.CommandType = CommandType.StoredProcedure;
+                if (membermaster.MembershipMonth == 0)
+                    oDm.Add("@MembershipMonth", SqlDbType.Int, DBNull.Value);
+                else
+                    oDm.Add("@MembershipMonth", SqlDbType.Int, membermaster.MembershipMonth);
+                if (membermaster.MembershipYear == 0)
+                    oDm.Add("@MembershipYear", SqlDbType.Int, DBNull.Value);
+                else
+                    oDm.Add("@MembershipYear", SqlDbType.Int, membermaster.MembershipYear);
+               
+
+
                 //return oDm.ExecuteDataTable("MemberMaster_GetAll");
                 return oDm.ExecuteDataTable("MemberMaster_GetAllNew");
             }
@@ -685,6 +696,54 @@ namespace DataAccess.Common
                 return oDm.ExecuteDataTable("DevelopmentMember_GetAll");
             }
         }
+
+        public static DataTable DevelopmentMemberUpdateGetAll(int StateId, int DistrictId, int BlockId, int CategoryId, string MemberName, string MobileNo, int BusinessTypeId, DateTime FromDate, DateTime ToDate)
+        {
+            using (DataManager oDm = new DataManager())
+            {
+                if (StateId == 0)
+                    oDm.Add("@pStateId", SqlDbType.Int, DBNull.Value);
+                else
+                    oDm.Add("@pStateId", SqlDbType.Int, StateId);
+                if (DistrictId == 0)
+                    oDm.Add("@pDistrictId", SqlDbType.Int, DBNull.Value);
+                else
+                    oDm.Add("@pDistrictId", SqlDbType.Int, DistrictId);
+                if (BlockId == 0)
+                    oDm.Add("@pBlockId", SqlDbType.Int, DBNull.Value);
+                else
+                    oDm.Add("@pBlockId", SqlDbType.Int, BlockId);
+                if (CategoryId == 0)
+                    oDm.Add("@pCategoryId", SqlDbType.Int, DBNull.Value);
+                else
+                    oDm.Add("@pCategoryId", SqlDbType.Int, CategoryId);
+                //if (MemberName == "")
+                //    oDm.Add("@pMemberName", SqlDbType.VarChar, 200, DBNull.Value);
+                //else
+                //    oDm.Add("@pMemberName", SqlDbType.VarChar, 200, MemberName);
+                //if (MobileNo == "")
+                //    oDm.Add("@pMobileNo", SqlDbType.VarChar, 100, DBNull.Value);
+                //else
+                //    oDm.Add("@pMobileNo", SqlDbType.VarChar, 100, MobileNo);
+                if (BusinessTypeId == 0)
+                    oDm.Add("@pBusinessTypeId", SqlDbType.Int, DBNull.Value);
+                else
+                    oDm.Add("@pBusinessTypeId", SqlDbType.Int, BusinessTypeId);
+                if (FromDate == DateTime.MinValue)
+                    oDm.Add("@pFromDate", SqlDbType.Date, DateTime.MinValue);
+                else
+                    oDm.Add("@pFromDate", SqlDbType.Date, FromDate);
+                if (ToDate == DateTime.MinValue)
+                    oDm.Add("@pToDate", SqlDbType.Date, DateTime.MaxValue);
+                else
+                    oDm.Add("@pToDate", SqlDbType.Date, ToDate);
+
+                oDm.CommandType = CommandType.StoredProcedure;
+                return oDm.ExecuteDataTable("DevelopmentMemberUpdate_GetAll");
+            }
+        }
+
+
         public static DataTable RenewalMemberGetAll(int StateId, int DistrictId, int BlockId, int CategoryId, string MemberName, string MobileNo, int BusinessTypeId, DateTime FromDate, DateTime ToDate)
         {
             using (DataManager oDm = new DataManager())
@@ -728,6 +787,52 @@ namespace DataAccess.Common
 
                 oDm.CommandType = CommandType.StoredProcedure;
                 return oDm.ExecuteDataTable("RenewalMember_GetAll");
+            }
+        }
+
+        public static DataTable RenewalMemberUpdateGetAll(int StateId, int DistrictId, int BlockId, int CategoryId, string MemberName, string MobileNo, int BusinessTypeId, DateTime FromDate, DateTime ToDate)
+        {
+            using (DataManager oDm = new DataManager())
+            {
+                if (StateId == 0)
+                    oDm.Add("@pStateId", SqlDbType.Int, DBNull.Value);
+                else
+                    oDm.Add("@pStateId", SqlDbType.Int, StateId);
+                if (DistrictId == 0)
+                    oDm.Add("@pDistrictId", SqlDbType.Int, DBNull.Value);
+                else
+                    oDm.Add("@pDistrictId", SqlDbType.Int, DistrictId);
+                if (BlockId == 0)
+                    oDm.Add("@pBlockId", SqlDbType.Int, DBNull.Value);
+                else
+                    oDm.Add("@pBlockId", SqlDbType.Int, BlockId);
+                if (CategoryId == 0)
+                    oDm.Add("@pCategoryId", SqlDbType.Int, DBNull.Value);
+                else
+                    oDm.Add("@pCategoryId", SqlDbType.Int, CategoryId);
+                //if (MemberName == "")
+                //    oDm.Add("@pMemberName", SqlDbType.VarChar, 200, DBNull.Value);
+                //else
+                //    oDm.Add("@pMemberName", SqlDbType.VarChar, 200, MemberName);
+                //if (MobileNo == "")
+                //    oDm.Add("@pMobileNo", SqlDbType.VarChar, 100, DBNull.Value);
+                //else
+                //    oDm.Add("@pMobileNo", SqlDbType.VarChar, 100, MobileNo);
+                if (BusinessTypeId == 0)
+                    oDm.Add("@pBusinessTypeId", SqlDbType.Int, DBNull.Value);
+                else
+                    oDm.Add("@pBusinessTypeId", SqlDbType.Int, BusinessTypeId);
+                if (FromDate == DateTime.MinValue)
+                    oDm.Add("@pFromDate", SqlDbType.Date, DateTime.MinValue);
+                else
+                    oDm.Add("@pFromDate", SqlDbType.Date, FromDate);
+                if (ToDate == DateTime.MinValue)
+                    oDm.Add("@pToDate", SqlDbType.Date, DateTime.MaxValue);
+                else
+                    oDm.Add("@pToDate", SqlDbType.Date, ToDate);
+
+                oDm.CommandType = CommandType.StoredProcedure;
+                return oDm.ExecuteDataTable("RenewalMemberUpdate_GetAll");
             }
         }
     }

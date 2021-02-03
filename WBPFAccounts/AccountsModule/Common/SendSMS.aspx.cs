@@ -355,6 +355,9 @@ namespace AccountsModule.Common
                 }
             }
         }
+       
+
+
         protected void btnSentNotification_Click(object sender, EventArgs e)
         {
             BusinessLayer.Common.SMSMemberMaster objMember = new BusinessLayer.Common.SMSMemberMaster();
@@ -367,49 +370,101 @@ namespace AccountsModule.Common
 
 
 
-                                        string ImageUrl = "http://api.wbpoultryfederation.org/Images/Poultry_LargeIcon.jpg";
-                                var request = WebRequest.Create("https://onesignal.com/api/v1/notifications") as HttpWebRequest;
-                                request.KeepAlive = true;
-                                request.Method = "POST";
+                    string ImageUrl = "http://api.wbpoultryfederation.org/Images/Poultry_LargeIcon.jpg";
+                    var request = WebRequest.Create("https://onesignal.com/api/v1/notifications") as HttpWebRequest;
+                    request.KeepAlive = true;
+                    request.Method = "POST";
 
-                                request.ContentType = "application/json; charset=utf-8";
+                    request.ContentType = "application/json; charset=utf-8";
 
-                                request.Headers.Add("authorization", "Basic MjEwZTY1MjMtM2QxNi00OWE5LWE0ZjMtMDliNjc1M2U3N2Q0");
+                    request.Headers.Add("authorization", "OGYtYjE2NS00NDE4LThODdjNGUxlMTUtZmQ2ZjJkODg0ZGJl");
 
-                                byte[] byteArray = Encoding.UTF8.GetBytes("{"
-                                                                        + "\"app_id\": \"ae2fd19a-d603-4254-a7c8-4c880fb60f08\","
-                                                                        + "\"large_icon\" : \" " + ImageUrl + " \", "
-                                                                        + "\"data\": {\"NotificationType\": \"Loading\"},"
-                                                                        + "\"contents\": {\"en\": \"WBPF - Bird rate published for today.Please Login to APP and Check!!\"},"
-                                                                        + "\"include_player_ids\": [\"" + member["DeviceId"].ToString() + "\"]}");
+                    byte[] byteArray = Encoding.UTF8.GetBytes("{"
+                                                            + "\"app_id\": \"a4143c17-1b1b-42f3-bb2d-9a25295de246\","
+                                                            + "\"large_icon\" : \" " + ImageUrl + " \", "
+                                                            + "\"data\": {\"NotificationType\": \"Loading\"},"
+                                                            + "\"contents\": {\"en\": \"WBPF - Bird rate published for today.Please Login to APP and Check!!\"},"
+                                                            + "\"include_player_ids\": [\"" + member["DeviceId"].ToString() + "\"]}");
 
                     string responseContent = null;
-                                try
-                                {
-                                    using (var writer = request.GetRequestStream())
-                                    {
-                                        writer.Write(byteArray, 0, byteArray.Length);
-                                    }
+                    try
+                    {
+                        using (var writer = request.GetRequestStream())
+                        {
+                            writer.Write(byteArray, 0, byteArray.Length);
+                        }
 
-                                    using (var response = request.GetResponse() as HttpWebResponse)
-                                    {
-                                        using (var reader = new StreamReader(response.GetResponseStream()))
-                                        {
-                                            responseContent = reader.ReadToEnd();
-                                        }
-                                    }
-                                    ShowMsg("Notification Send Successfully");
+                        using (var response = request.GetResponse() as HttpWebResponse)
+                        {
+                            using (var reader = new StreamReader(response.GetResponseStream()))
+                            {
+                                responseContent = reader.ReadToEnd();
+                            }
+                        }
+                        ShowMsg("Notification Send Successfully");
 
-                                }
-                                catch (WebException ex)
-                                {
-                                    System.Diagnostics.Debug.WriteLine(ex.Message);
-                                    System.Diagnostics.Debug.WriteLine(new StreamReader(ex.Response.GetResponseStream()).ReadToEnd());
-                                }
+                    }
+                    catch (WebException ex)
+                    {
+                        System.Diagnostics.Debug.WriteLine(ex.Message);
+                        System.Diagnostics.Debug.WriteLine(new StreamReader(ex.Response.GetResponseStream()).ReadToEnd());
+                    }
 
 
                 }
             }
+        }
+
+
+
+
+        protected void btnSentNotification_Click_Test(object sender, EventArgs e)
+        {
+
+            string DeviceId = "e0424fcc-66d4-47b6-a8ea-cd8925c090f3";
+
+
+            string ImageUrl = "http://api.wbpoultryfederation.org/Images/Poultry_LargeIcon.jpg";
+            var request = WebRequest.Create("https://onesignal.com/api/v1/notifications") as HttpWebRequest;
+            request.KeepAlive = true;
+            request.Method = "POST";
+
+            request.ContentType = "application/json; charset=utf-8";
+
+            request.Headers.Add("authorization", "OGYtYjE2NS00NDE4LThODdjNGUxlMTUtZmQ2ZjJkODg0ZGJl");
+
+            byte[] byteArray = Encoding.UTF8.GetBytes("{"
+                                                    + "\"app_id\": \"a4143c17-1b1b-42f3-bb2d-9a25295de246\","
+                                                    + "\"large_icon\" : \" " + ImageUrl + " \", "
+                                                    + "\"data\": {\"NotificationType\": \"Loading\"},"
+                                                    + "\"contents\": {\"en\": \"WBPF - Bird rate published for today.Please Login to APP and Check!!\"},"
+                                                    + "\"include_player_ids\": [\"" + DeviceId + "\"]}");
+
+            string responseContent = null;
+            try
+            {
+                using (var writer = request.GetRequestStream())
+                {
+                    writer.Write(byteArray, 0, byteArray.Length);
+                }
+
+                using (var response = request.GetResponse() as HttpWebResponse)
+                {
+                    using (var reader = new StreamReader(response.GetResponseStream()))
+                    {
+                        responseContent = reader.ReadToEnd();
+                    }
+                }
+                ShowMsg("Notification Send Successfully");
+
+            }
+            catch (WebException ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+                System.Diagnostics.Debug.WriteLine(new StreamReader(ex.Response.GetResponseStream()).ReadToEnd());
+            }
+
+
         }
 
     }

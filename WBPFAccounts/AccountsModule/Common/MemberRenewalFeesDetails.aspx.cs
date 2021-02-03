@@ -41,6 +41,7 @@ namespace AccountsModule.Common
                     LoadMonth();
                     Message.Show = false;
                     btnDownload.Visible = false;
+                    btnDownload_WithOutOpening.Visible = false;
                     (ddlFromMonth.SelectedValue) = "4";
                     (ddlToMonth.SelectedValue) = "3";
                 }
@@ -92,13 +93,14 @@ namespace AccountsModule.Common
             FromMonth = Convert.ToInt32(ddlFromMonth.SelectedValue);
             ToMonth = Convert.ToInt32(ddlToMonth.SelectedValue);
             BusinessLayer.Common.MemberFeesConfig objMember = new BusinessLayer.Common.MemberFeesConfig();
-            DataSet ds = objMember.MemberRenewalFeeGetAll(MemberId, FinYrId, FromMonth,ToMonth);
+            DataSet ds = objMember.MemberRenewalFeeGetAll(MemberId, FinYrId, FromMonth,ToMonth,0);
             DataTable dt = ds.Tables[1];
             if (dt.Rows.Count > 0)
             {
                 dgvMemberRenewalFee.DataSource = dt;
                 dgvMemberRenewalFee.DataBind();
                 btnDownload.Visible = true;
+                btnDownload_WithOutOpening.Visible = true;
             }
             else
             {
@@ -111,7 +113,15 @@ namespace AccountsModule.Common
             //ScriptManager.RegisterStartupScript(this, this.GetType(), "onclick", "openpopup('member-renewal-bill.aspx?MemberId=" + MemberId + "&FinYrId=" + FinYrId + "&FromMonth=" + FromMonth + "&ToMonth=" + ToMonth + "');", true);
             //ScriptManager.RegisterStartupScript(this, this.GetType(), "onclick", "javascript:window.open('member-renewal-bill.aspx?MemberId=" + MemberId + "&FinYrId=" + FinYrId + "&FromMonth=" + FromMonth + "&ToMonth=" + ToMonth + "','_blank','height=700px,width=1000px,scrollbars=1');", true);
             //Page.ClientScript.RegisterStartupScript(GetType(),"","");
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "OnClick", "openpopup('member-renewal-bill.aspx?MemberId=" + MemberId + "&FinYrId=" + FinYrId + "&FromMonth=" + FromMonth + "&ToMonth=" + ToMonth + "');",true);
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "OnClick", "openpopup('member-renewal-bill.aspx?MemberId=" + MemberId + "&FinYrId=" + FinYrId + "&FromMonth=" + FromMonth + "&ToMonth=" + ToMonth+ "&WithOutOpening=" + 0 + "');",true);
+            //Page.RegisterStartupScript("OnClick","openpopup('member-renewal-bill.aspx?MemberId=" + MemberId+"&FinYrId="+FinYrId + "&FromMonth=" + FromMonth + "&ToMonth=" + ToMonth + "'); return false;");
+        }
+        protected void btnDownload_WithOutOpening_Click(object sender, EventArgs e)
+        {
+            //ScriptManager.RegisterStartupScript(this, this.GetType(), "onclick", "openpopup('member-renewal-bill.aspx?MemberId=" + MemberId + "&FinYrId=" + FinYrId + "&FromMonth=" + FromMonth + "&ToMonth=" + ToMonth + "');", true);
+            //ScriptManager.RegisterStartupScript(this, this.GetType(), "onclick", "javascript:window.open('member-renewal-bill.aspx?MemberId=" + MemberId + "&FinYrId=" + FinYrId + "&FromMonth=" + FromMonth + "&ToMonth=" + ToMonth + "','_blank','height=700px,width=1000px,scrollbars=1');", true);
+            //Page.ClientScript.RegisterStartupScript(GetType(),"","");
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "OnClick", "openpopup('member-renewal-bill.aspx?MemberId=" + MemberId + "&FinYrId=" + FinYrId + "&FromMonth=" + FromMonth + "&ToMonth=" + ToMonth + "&WithOutOpening=" + 1 + "');", true);
             //Page.RegisterStartupScript("OnClick","openpopup('member-renewal-bill.aspx?MemberId=" + MemberId+"&FinYrId="+FinYrId + "&FromMonth=" + FromMonth + "&ToMonth=" + ToMonth + "'); return false;");
         }
 

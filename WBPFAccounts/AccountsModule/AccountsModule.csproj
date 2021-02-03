@@ -121,6 +121,7 @@
     <Content Include="Common\development-bill.aspx" />
     <Content Include="Common\DevelopmentFeeAdjustment.aspx" />
     <Content Include="Common\DevelopmentFeeMemberReport.aspx" />
+    <Content Include="Common\DevelopmentFeeUpdateReport.aspx" />
     <Content Include="Common\FeeCollectionReport.aspx" />
     <Content Include="Common\IFBirdPrice.aspx" />
     <Content Include="Common\IFMembers.aspx" />
@@ -142,6 +143,8 @@
     <Content Include="Common\NECCMember.aspx" />
     <Content Include="Common\NECCSendSMS.aspx" />
     <Content Include="Common\OutstandingReportNew.aspx" />
+    <Content Include="Common\OutstandinReportNewForAgent.aspx" />
+    <Content Include="Common\RenewalFeeUpdateReport.aspx" />
     <Content Include="Common\SendSMSByMemberType.aspx" />
     <Content Include="Common\SMSAPIConfig.aspx" />
     <Content Include="Common\SMSMemberExpireDetails.aspx" />
@@ -716,6 +719,13 @@
     <Compile Include="Common\DevelopmentFeeMemberReport.aspx.designer.cs">
       <DependentUpon>DevelopmentFeeMemberReport.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Common\DevelopmentFeeUpdateReport.aspx.cs">
+      <DependentUpon>DevelopmentFeeUpdateReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\DevelopmentFeeUpdateReport.aspx.designer.cs">
+      <DependentUpon>DevelopmentFeeUpdateReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Common\FeeCollectionReport.aspx.cs">
       <DependentUpon>FeeCollectionReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -862,6 +872,20 @@
     </Compile>
     <Compile Include="Common\OutstandingReportNew.aspx.designer.cs">
       <DependentUpon>OutstandingReportNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\OutstandinReportNewForAgent.aspx.cs">
+      <DependentUpon>OutstandinReportNewForAgent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\OutstandinReportNewForAgent.aspx.designer.cs">
+      <DependentUpon>OutstandinReportNewForAgent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\RenewalFeeUpdateReport.aspx.cs">
+      <DependentUpon>RenewalFeeUpdateReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\RenewalFeeUpdateReport.aspx.designer.cs">
+      <DependentUpon>RenewalFeeUpdateReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Common\SendSMSByMemberType.aspx.cs">
       <DependentUpon>SendSMSByMemberType.aspx</DependentUpon>

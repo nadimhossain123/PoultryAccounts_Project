@@ -55,9 +55,9 @@
                 <li><a href="~/Common/MemberMasterInfo.aspx" runat="server"><span class="icon">
                     <img src="~/Images/calendar.png" runat="server" /></span><span>Payment</span></a>
                 </li>
-                <%--<li><a href="~/Common/MemberOutstandingReport.aspx" runat="server"><span class="icon">
+                <li><a href="~/Common/OutstandinReportNewForAgent.aspx" runat="server"><span class="icon">
                     <img src="~/Images/calendar.png" runat="server" /></span><span>Outstanding Report</span></a>
-                </li>--%>
+                </li>
                 <li><a href="~/Common/MemberPaymentReport.aspx" runat="server"><span class="icon">
                     <img src="~/Images/calendar.png" runat="server" /></span><span>Payment Report</span></a>
                 </li>

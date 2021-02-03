@@ -27,14 +27,14 @@ namespace BusinessLayer.Common
             return DataAccess.Common.MemberFeesConfig.MemberDevelopmentFeeGetAll(MemberId);
         }
 
-        public DataSet MemberRenewalFeeGetAll(int MemberId,int FinYrId,int FromMonth,int ToMonth)
+        public DataSet MemberRenewalFeeGetAll(int MemberId,int FinYrId,int FromMonth,int ToMonth,int WithOutOpening)
         {
-            return DataAccess.Common.MemberFeesConfig.MemberRenewalFeeGetAll(MemberId, FinYrId, FromMonth, ToMonth);
+            return DataAccess.Common.MemberFeesConfig.MemberRenewalFeeGetAll(MemberId, FinYrId, FromMonth, ToMonth, WithOutOpening);
         }
 
-        public DataSet MemberDevelopmentFeeAllMonthGetAll(int MemberId, int FinYrId, int FromMonth, int ToMonth)
+        public DataSet MemberDevelopmentFeeAllMonthGetAll(int MemberId, int FinYrId, int FromMonth, int ToMonth,int WithOutOpening)
         {
-            return DataAccess.Common.MemberFeesConfig.MemberDevelopmentFeeAllMonthGetAll(MemberId, FinYrId, FromMonth, ToMonth);
+            return DataAccess.Common.MemberFeesConfig.MemberDevelopmentFeeAllMonthGetAll(MemberId, FinYrId, FromMonth, ToMonth,WithOutOpening);
         }
     }
 }

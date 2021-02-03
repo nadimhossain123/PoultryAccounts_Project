@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AccountsModule.Common {
-    
-    
-    public partial class MemberDevelopmentFeesDetails {
-        
+namespace AccountsModule.Common
+{
+
+
+    public partial class MemberDevelopmentFeesDetails
+    {
+
         /// <summary>
         /// ToolScript1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.ToolkitScriptManager ToolScript1;
-        
+
         /// <summary>
         /// Message control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::CollegeERP.UserControl.Message Message;
-        
+
         /// <summary>
         /// ddlMember control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.ComboBox ddlMember;
-        
+
         /// <summary>
         /// ddlFromMonth control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlFromMonth;
-        
+
         /// <summary>
         /// ddlToMonth control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlToMonth;
-        
+
         /// <summary>
         /// btnSearch control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearch;
-        
+
         /// <summary>
         /// dgvMemberDevelopmentFee control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView dgvMemberDevelopmentFee;
-        
+
         /// <summary>
         /// btnDownload control.
         /// </summary>
@@ -83,5 +85,14 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnDownload;
+
+        /// <summary>
+        /// btnDownload_WithOutOpening control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDownload_WithOutOpening;
     }
 }

@@ -11,13 +11,13 @@ using System.Net.Mail;
 
 namespace AccountsModule.Common
 {
-    public partial class OutstandingReportNew : System.Web.UI.Page
+    public partial class OutstandinReportNewForAgent : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           if (Session["UserId"] != null && Session["UserType"] != null && Session["UserType"].ToString().Equals("Admin"))
+            if (Session["UserId"] != null)
             {
-                
+
                 if (!IsPostBack)
                 {
                     PopulateDropDownLists();
@@ -140,7 +140,7 @@ namespace AccountsModule.Common
             DateTime ToDate = Convert.ToDateTime(txtToDate.Text.Split('/')[2] + "-" + txtToDate.Text.Split('/')[1] + "-" + txtToDate.Text.Split('/')[0]);
             DateTime FromDate = Convert.ToDateTime(txtFromDate.Text.Split('/')[2] + "-" + txtFromDate.Text.Split('/')[1] + "-" + txtFromDate.Text.Split('/')[0]);
             //string MemberName = txtMemberName.Text.Trim();
-            string MemberName = ""; 
+            string MemberName = "";
             int BusinessTypeId = Convert.ToInt32(ddlBusinessType.SelectedValue); //14/10/19-business type fieldfor search
             int ReportType = Convert.ToInt32(ddlReportType.SelectedValue.Trim());
 
