@@ -190,7 +190,7 @@ namespace AccountsModule.Common
             PrepareGridViewForExport(dgvMemberOutstanding);
             Response.ClearContent();
             Response.AddHeader("content-disposition", "attachment; filename=MemberOutstandingReport.xls");
-            Response.ContentType = "application/excel";
+           Response.ContentType =  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
             StringWriter sWriter = new StringWriter();
             HtmlTextWriter hTextWriter = new HtmlTextWriter(sWriter);
             dgvMemberOutstanding.RenderControl(hTextWriter);

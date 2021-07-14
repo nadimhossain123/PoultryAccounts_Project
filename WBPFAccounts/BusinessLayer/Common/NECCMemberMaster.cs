@@ -8,9 +8,9 @@ namespace BusinessLayer.Common
 {
     public class NECCMemberMaster
     {
-        public int Save(Entity.Common.NECCMemberMaster neccmember, DateTime StartDate, DateTime EndDate, string txtRemarks)
+        public int Save(Entity.Common.NECCMemberMaster neccmember, string txtRemarks)
         {
-            return DataAccess.Common.NECCMemberMaster.Save(neccmember, StartDate, EndDate, txtRemarks);
+            return DataAccess.Common.NECCMemberMaster.Save(neccmember, txtRemarks);
         }
 
         public Entity.Common.NECCMemberMaster GetNECCMemberById(int NECCMemberId)

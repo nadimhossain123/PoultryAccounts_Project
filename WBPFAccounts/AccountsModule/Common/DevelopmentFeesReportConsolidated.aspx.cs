@@ -162,7 +162,7 @@ namespace AccountsModule.Common
 
             Response.ClearContent();
             Response.AddHeader("content-disposition", "attachment; filename=DevelopmentFeesReportConsolidated.xls");
-            Response.ContentType = "application/excel";
+           Response.ContentType =  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
             StringWriter sWriter = new StringWriter();
             HtmlTextWriter hTextWriter = new HtmlTextWriter(sWriter);
             dgvMemberOutstanding.RenderControl(hTextWriter);

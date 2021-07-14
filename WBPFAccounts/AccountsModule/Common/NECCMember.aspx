@@ -22,17 +22,12 @@
             else if (document.getElementById('<%=txtMobileNo.ClientID %>').value == '')
                 return ShowMsg('Enter Mobile No');
 
-           <%-- else if (document.getElementById('<%=ddlRegType.ClientID %>').selectedIndex == 0)
-                return ShowMsg('Select Member Type');--%>
+            else if (document.getElementById('<%=ddlDistrict2.ClientID %>').selectedIndex == 0)
+                return ShowMsg('Select District');
 
-            else if (document.getElementById('<%=chkIsActive.ClientID %>').checked == false)
-                return ShowMsg('Select Member Status');
+           
 
-            else if (document.getElementById('<%=txtStartDate.ClientID %>').value == '')
-                return ShowMsg('Enter Start Date');
 
-            else if (document.getElementById('<%=txtEndDate.ClientID %>').value == '')
-                return ShowMsg('Enter End Date');
 
             else
                 return confirm("Are You Sure?");
@@ -54,15 +49,7 @@
     <uc3:Message ID="Message" runat="server" />
     <br />
     <table width="80%" align="center">
-        <tr>
-            <td align="left">Parent Member :
-            </td>
-            <td align="left" colspan="3">
-                <asp:ComboBox ID="ddlMember" runat="server" CssClass="WindowsStyle" Width="300px"
-                    AutoCompleteMode="SuggestAppend" DataValueField="MemberId" DataTextField="MemberName">
-                </asp:ComboBox>
-            </td>
-        </tr>
+       
         <tr>
             <td align="left">&nbsp;
             </td>
@@ -95,26 +82,9 @@
             </td>
         </tr>
         <tr>
-            <%--<td align="left">Member Type :
-            </td>
+           <td align="left"><span style="color: Red">*</span>District :</td>
             <td align="left">
-                <asp:DropDownList ID="ddlRegType" runat="server" CssClass="dropdownList" Width="100px">
-                    <asp:ListItem Text="--SELECT--" Value="0"></asp:ListItem>
-                    <asp:ListItem Text="PAID" Value="2"></asp:ListItem>
-                    <asp:ListItem Text="FREE" Value="3"></asp:ListItem>
-                    <asp:ListItem Text="GOVT" Value="4"></asp:ListItem>
-                    <asp:ListItem Text="CORE" Value="5"></asp:ListItem>
-                </asp:DropDownList>
-            </td>--%>
-            <td align="left">
-                <span style="color: Red">*</span> Start Date :
-            </td>
-            <td align="left">
-                <asp:TextBox ID="txtStartDate" runat="server" CssClass="textbox" Width="100px"></asp:TextBox>
-                <asp:CalendarExtender ID="CalendarExtenderStartDate" runat="server" CssClass="cal_Theme1"
-                    PopupPosition="TopRight" Format="dd/MM/yyyy" TargetControlID="txtStartDate" OnClientDateSelectionChanged=""
-                    Enabled="True">
-                </asp:CalendarExtender>
+                <asp:DropDownList ID="ddlDistrict2" runat="server" CssClass="dropdownList" Width="150px" DataValueField="DistrictId" DataTextField="DistrictName"></asp:DropDownList>
             </td>
         </tr>
         <tr>
@@ -123,16 +93,7 @@
             <td align="left">
                 <asp:CheckBox ID="chkIsActive" runat="server" />
             </td>
-            <td align="left">
-                <span style="color: Red">*</span> End Date :
-            </td>
-            <td align="left">
-                <asp:TextBox ID="txtEndDate" runat="server" CssClass="textbox" Width="100px"></asp:TextBox>
-                <asp:CalendarExtender ID="CalendarExtender1" runat="server" CssClass="cal_Theme1"
-                    PopupPosition="TopRight" Format="dd/MM/yyyy" TargetControlID="txtEndDate" OnClientDateSelectionChanged=""
-                    Enabled="True">
-                </asp:CalendarExtender>
-            </td>
+           
         </tr>
         <tr>
             <td align="left">Remarks :
@@ -196,20 +157,26 @@
                         OnRowDeleting="dgvNECCMember_RowDeleting" OnRowEditing="dgvNECCMember_RowEditing"
                         CellPadding="4" AllowPaging="True" PageSize="50" OnRowDataBound="dgvNECCMember_RowDataBound">
                         <Columns>
-                            <asp:BoundField DataField="SL" HeaderText="Sl No." />
-                            <asp:BoundField DataField="FullMemberName" HeaderText="Parent Member" />
+                             <asp:TemplateField HeaderText="Sl No." HeaderStyle-Width="15px">
+                            <ItemTemplate>
+                                <%# Container.DataItemIndex+1 %>
+                            </ItemTemplate>
+                            <HeaderStyle Width="15px"></HeaderStyle>
+                        </asp:TemplateField>
                             <asp:BoundField DataField="MemberName" HeaderText="Member Name" />
                             <asp:BoundField DataField="MobileNo" HeaderText="Mobile No" />
                             <asp:BoundField DataField="DistrictName" HeaderText="District" />
                             <asp:BoundField DataField="Address" HeaderText="Address" />
-                            <asp:BoundField DataField="MemberType" HeaderText="Member Type" />
-                            <asp:BoundField DataField="StartDate" HeaderText="Start Date" DataFormatString="{0: dd/MM/yyyy}" />
-                            <asp:BoundField DataField="EndDate" HeaderText="End Date" DataFormatString="{0: dd/MM/yyyy}" />
-                            <%--<asp:BoundField DataField="SMSRenewalStatus" HeaderText="Renewal Status" />--%>
                             <asp:BoundField DataField="Remarks" HeaderText="Remarks" />
                             <asp:CommandField ShowEditButton="True" ButtonType="Image" EditImageUrl="~/Images/edit_icon.gif" />
                             <asp:CommandField ShowDeleteButton="True" ButtonType="Image" DeleteImageUrl="~/Images/delete_icon.gif"
                                 Visible="false" />
+                            <asp:TemplateField Visible="false">
+                            <ItemTemplate>
+                                <asp:HiddenField ID="HidIsActive" runat="server" Value='<%#Bind("IsActive") %>'>
+                                </asp:HiddenField>
+                            </ItemTemplate>
+                             </asp:TemplateField>
                         </Columns>
                         <HeaderStyle CssClass="HeaderStyle" />
                         <RowStyle CssClass="RowStyle" />

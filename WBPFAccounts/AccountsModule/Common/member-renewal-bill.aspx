@@ -134,7 +134,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2">1. Payments should be made by A/C payee cheque only.
+                <td colspan="2">1. Payments can be made by A/C payee cheque/NEFT/RTGS/Online Payment.
                 </td>
             </tr>
             <tr>

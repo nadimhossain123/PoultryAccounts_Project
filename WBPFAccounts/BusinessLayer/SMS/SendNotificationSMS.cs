@@ -42,9 +42,15 @@ namespace BusinessLayer
             try
             {
                 StringBuilder sb = new StringBuilder();
-                sb.Append(@"Your renewal of rate message has fallen due on " + EndDt + ". Please renew for continution. Message from WBPF");
+                sb.Append(@"Your renewal of rate message has fallen due on " + EndDt + ". Please renew for continuation. Message from WBPF");
                 string msg = sb.ToString();
-                string strUrl = GetHTTPAPI(Mob, msg);
+                string strUrl = "";
+                // strUrl = GetHTTPAPI(Mob, msg);
+                //strUrl = GetHTTPAPI(mobiles, message);
+                string apiKey = "MGM5N2U4ZTcyOWJjNjE1NmFkMTUxMmI0ZDY0YzBlZjI=";
+                string sendername = "WBPOLT";
+                
+                strUrl = string.Format("https://api.textlocal.in/send/?apiKey=" + apiKey + "&sender=" + sendername + "&numbers=" + Mob + "&message=" + msg);
 
                 WebRequest request = HttpWebRequest.Create(strUrl);
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
@@ -72,7 +78,7 @@ namespace BusinessLayer
             //string API = "";
 
             if (API_INDEX == "1")
-                API = string.Format("http://api.mVaayoo.com/mvaayooapi/MessageCompose?user=admin@fourfusionsolutions.com:solution2012&senderID=WBPOLT&receipientno={0}&msgtxt={1}&state=1", mobiles, message);
+                API = string.Format("http://api.mVaayoo.com/mvaayooapi/MessageCompose?user=admin@fourfusionsolutions.com:solution2012&senderID=WBPOLT&receipientno={0}&msgtxt={1}&state=1&template_id=1207161468209950601", mobiles, message);
             else if (API_INDEX == "2")
                 API = string.Format("http://www.krishsms.com/PostSms.aspx?userid=WBPOLT&pass=WBPOLT12345&phone={0}&msg={1}&title=WBPOLT", mobiles, message);
             else if (API_INDEX == "3")

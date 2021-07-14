@@ -276,7 +276,7 @@ namespace AccountsModule.Common
 
             Response.ClearContent();
             Response.AddHeader("content-disposition", "attachment; filename=MemberMaster.xls");
-            Response.ContentType = "application/excel";
+           Response.ContentType =  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
             System.IO.StringWriter sWriter = new System.IO.StringWriter();
             HtmlTextWriter hTextWriter = new HtmlTextWriter(sWriter);
             dgvMemberMaster.RenderControl(hTextWriter);

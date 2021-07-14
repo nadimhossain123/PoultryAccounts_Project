@@ -175,7 +175,7 @@
                 </td>
             </tr>
             <tr>
-                <td align="right" colspan="1">
+                <td align="left" colspan="1">
                     <asp:Button ID="btnDownload" runat="server" CssClass="button" Text="Download Report"
                         OnClick="btnDownload_Click" />
                 </td><td colspan="3"></td>

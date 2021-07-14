@@ -289,7 +289,7 @@ namespace CollegeERP.Accounts
             PrepareGridViewForExport(gvBRView);
             Response.ClearContent();
             Response.AddHeader("content-disposition", "attachment; filename=BRSReport.xls");
-            Response.ContentType = "application/excel";
+           Response.ContentType =  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
             StringWriter sWriter = new StringWriter();
             HtmlTextWriter hTextWriter = new HtmlTextWriter(sWriter);
             gvBRView.RenderControl(hTextWriter);

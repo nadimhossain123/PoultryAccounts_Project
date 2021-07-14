@@ -1,29 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using System.IO;
-using System.Text;
-using System.Net.Mail;
 
 namespace AccountsModule.Common
 {
-    public partial class MemberUptoDateReport : System.Web.UI.Page
+    public partial class GenerateRenewalFees_SpecialCase : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["UserId"] != null && Session["UserType"] != null && Session["UserType"].ToString().Equals("Admin"))
             {
+
                 if (!IsPostBack)
                 {
                     PopulateDropDownLists();
-                    txtToDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
-                    dgvMemberOutstanding.DataSource = null;
-                    dgvMemberOutstanding.DataBind();
-                    btnDownload.Visible = false;
+                   
+               
                     Message.Show = false;
                 }
             }
@@ -44,7 +40,7 @@ namespace AccountsModule.Common
             LoadStates();
             LoadDistricts();
             LoadBlock();
-            LoadMembershipCategory();
+           
         }
 
         protected void LoadStates()
@@ -98,48 +94,22 @@ namespace AccountsModule.Common
             InsertFisrtItem(ddlBlock, "Any Block");
         }
 
-        protected void LoadMembershipCategory()
-        {
-            BusinessLayer.Common.MembershipCategory objMembershipCategory = new BusinessLayer.Common.MembershipCategory();
-            DataTable dt = objMembershipCategory.GetAll();
-            if (dt != null)
-            {
-                ddlMembershipCategory.DataSource = dt;
-                ddlMembershipCategory.DataTextField = "CategoryName";
-                ddlMembershipCategory.DataValueField = "MembershipCategoryId";
-                ddlMembershipCategory.DataBind();
-            }
-            InsertFisrtItem(ddlMembershipCategory, "Any Category");
-        }
+        
 
-        private void LoadConsolidatedOutstandingList()
-        {
-            int StateId = Convert.ToInt32(ddlState.SelectedValue.Trim());
-            int DistrictId = Convert.ToInt32(ddlDistrict.SelectedValue.Trim());
-            int BlockId = Convert.ToInt32(ddlBlock.SelectedValue.Trim());
-            int CategoryId = Convert.ToInt32(ddlMembershipCategory.SelectedValue.Trim());
-            DateTime ToDate = Convert.ToDateTime(txtToDate.Text.Split('/')[2] + "-" + txtToDate.Text.Split('/')[1] + "-" + txtToDate.Text.Split('/')[0]);
-
-            BusinessLayer.Common.MemberPayment objMemberPayment = new BusinessLayer.Common.MemberPayment();
-            DataTable dt = objMemberPayment.GetMemberUptoDateReport(StateId, DistrictId, BlockId, CategoryId, ToDate);
-
-            dgvMemberOutstanding.DataSource = dt;
-            dgvMemberOutstanding.DataBind();
-
-            if (dt.Rows.Count > 0)
-            {
-                btnDownload.Visible = true;
-            }
-            else
-            {
-                btnDownload.Visible = false;
-            }
-        }
+       
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            LoadConsolidatedOutstandingList();
-            Message.Show = false;
+            int BlockId = Convert.ToInt32(ddlBlock.SelectedValue.Trim());
+            BusinessLayer.Common.MemberPayment objMemberPayment = new BusinessLayer.Common.MemberPayment();
+            int i = objMemberPayment.GenerateMemberBill_SpecialCase(BlockId);
+
+            if (i > 0)
+            {
+                Message.IsSuccess = true;
+                Message.Text = "Bill Generated Successfully";
+                Message.Show = true;
+            }
         }
 
         protected void ddlDistrict_SelectedIndexChanged(object sender, EventArgs e)
@@ -153,21 +123,14 @@ namespace AccountsModule.Common
             LoadBlock();
         }
 
-        protected void btnDownload_Click(object sender, EventArgs e)
+        
+
+        
+        public override void VerifyRenderingInServerForm(Control control)
         {
-            PrepareGridViewForExport(dgvMemberOutstanding);
-            dgvMemberOutstanding.Columns[0].Visible = false;
-
-            Response.ClearContent();
-            Response.AddHeader("content-disposition", "attachment; filename=MemberConsolidatedOutstandingReport.xls");
-           Response.ContentType =  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-            StringWriter sWriter = new StringWriter();
-            HtmlTextWriter hTextWriter = new HtmlTextWriter(sWriter);
-            dgvMemberOutstanding.RenderControl(hTextWriter);
-            Response.Write(sWriter.ToString());
-            Response.End();
+            /* Confirms that an HtmlForm control is rendered for the specified ASP.NET
+               server control at run time. */
         }
-
         private void PrepareGridViewForExport(Control gv)
         {
             Literal l = new Literal();
@@ -196,11 +159,11 @@ namespace AccountsModule.Common
             }
         }
 
-        public override void VerifyRenderingInServerForm(Control control)
-        {
-            /*Verifies that the control is rendered */
-        }
+
 
        
+      
+
+      
     }
 }

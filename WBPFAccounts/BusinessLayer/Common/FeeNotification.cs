@@ -191,7 +191,7 @@ namespace BusinessLayer.Common
             sb.Append(@"   </td>");
             sb.Append(@"  </tr>");
             sb.Append(@"  <tr>");
-            sb.Append(@"      <td>                1. Payments should be made by A/C payee cheque only.");
+            sb.Append(@"      <td>                1. Payments can be made by A/C payee cheque/NEFT/RTGS/Online Payment.");
             sb.Append(@"     </td>");
             sb.Append(@"     <td>");
             sb.Append(@"     </td>");

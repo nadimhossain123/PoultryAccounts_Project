@@ -28,9 +28,7 @@ namespace AccountsModule.Common
                 if (!IsPostBack)
                 {
                     PopulateDropDownLists();
-                    LoadMemberList();
                     LoadNECCMember();
-
                     if (Request.QueryString["NECCMemberId"] != null && Request.QueryString["NECCMemberId"].Trim().Length > 0
                         && Request.QueryString["RedirectUrl"] != null && Request.QueryString["RedirectUrl"].Length > 0)
                     {
@@ -51,25 +49,7 @@ namespace AccountsModule.Common
                 Response.Redirect("../Login.aspx");
             }
         }
-        private void LoadMemberList()
-        {
-            BusinessLayer.Common.MemberMaster objMember = new BusinessLayer.Common.MemberMaster();
-            Entity.Common.MemberMaster membermaster = new Entity.Common.MemberMaster();
 
-            membermaster.BlockId = 0;
-            membermaster.DistrictId = 0;
-            membermaster.StateId = 0;
-            membermaster.CategoryId = 0;
-            membermaster.MemberName = string.Empty;
-
-            DataTable dt = objMember.GetAll(membermaster);
-            DataView dv = new DataView(dt);
-            dv.RowFilter = "IsNull(IsApproved,0) = 1 And IsNull(IsActive,0) = 1";
-
-            ddlMember.DataSource = dv;
-            ddlMember.DataBind();
-            ddlMember.Items.Insert(0, new ListItem("--Select Member--", "0"));
-        }
 
         private void ClearControl()
         {
@@ -78,13 +58,9 @@ namespace AccountsModule.Common
             //ddlRegType.SelectedIndex = 0;
             txtMobileNo.Text = "";
             txtRemarks.Text = "";
-            txtStartDate.Text = "";
-            txtEndDate.Text = "";
             chkIsActive.Checked = false;
-            ddlMember.SelectedValue = "0";
+            ddlDistrict.SelectedValue = "0";
             Message.Show = false;
-
-            ddlMember.Enabled = true;
             txtMemberName.Enabled = true;
         }
 
@@ -96,6 +72,10 @@ namespace AccountsModule.Common
             ddlDistrict.DataSource = DT;
             ddlDistrict.DataBind();
             ddlDistrict.Items.Insert(0, new ListItem("All District", "0"));
+
+            ddlDistrict2.DataSource = DT;
+            ddlDistrict2.DataBind();
+            ddlDistrict2.Items.Insert(0, new ListItem("All District", "0"));
         }
 
         protected void InsertFisrtItem(DropDownList ddlList, string text)
@@ -112,17 +92,12 @@ namespace AccountsModule.Common
             if (sMSMember != null)
             {
                 NECCMemberId = sMSMember.NECCMemberId;
-                ddlMember.SelectedValue = sMSMember.ParentMemberId.ToString();
                 txtMemberName.Text = sMSMember.MemberName.ToString();
                 txtMobileNo.Text = sMSMember.MobileNo.ToString();
                 txtAddress.Text = sMSMember.Address.ToString();
-                //ddlRegType.Text = sMSMember.MemberType.ToString();
                 chkIsActive.Checked = Convert.ToBoolean(sMSMember.IsActive);
-                txtStartDate.Text = sMSMember.StartDate.ToString("dd/MM/yyyy");
-                txtEndDate.Text = sMSMember.EndDate.ToString("dd/MM/yyyy");
+                ddlDistrict2.SelectedValue = sMSMember.DistrictId.ToString();
                 txtRemarks.Text = sMSMember.Remarks.ToString();
-
-                //ddlMember.Enabled = false;
                 txtMemberName.Enabled = false;
 
                 btnSave.Text = "Update";
@@ -131,20 +106,17 @@ namespace AccountsModule.Common
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            DateTime StartDate = Convert.ToDateTime(txtStartDate.Text.Split('/')[2] + "-" + txtStartDate.Text.Split('/')[1] + "-" + txtStartDate.Text.Split('/')[0]);
-            DateTime EndDate = Convert.ToDateTime(txtEndDate.Text.Split('/')[2] + "-" + txtEndDate.Text.Split('/')[1] + "-" + txtEndDate.Text.Split('/')[0]);
 
             BusinessLayer.Common.NECCMemberMaster objNECCMember = new BusinessLayer.Common.NECCMemberMaster();
             Entity.Common.NECCMemberMaster sMSMember = new Entity.Common.NECCMemberMaster();
             sMSMember.NECCMemberId = NECCMemberId;
-            sMSMember.ParentMemberId = Convert.ToInt32(ddlMember.SelectedValue);
             sMSMember.MemberName = txtMemberName.Text.Trim();
             sMSMember.MobileNo = txtMobileNo.Text.Trim();
             sMSMember.Address = txtAddress.Text.Trim();
             //sMSMember.MemberType = Convert.ToInt32(ddlRegType.SelectedValue);
             sMSMember.IsActive = chkIsActive.Checked;
-            sMSMember.CreatedBy = Convert.ToInt32(Session["UserId"]);
-            int RowsUpdated = objNECCMember.Save(sMSMember, StartDate, EndDate, txtRemarks.Text.Trim());
+            sMSMember.DistrictId = Convert.ToInt32(ddlDistrict2.SelectedValue);
+            int RowsUpdated = objNECCMember.Save(sMSMember, txtRemarks.Text.Trim());
 
             if (RowsUpdated > 0)
             {
@@ -206,11 +178,26 @@ namespace AccountsModule.Common
             LoadNECCMember();
         }
 
+       
+
         protected void dgvNECCMember_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
 
+                string IsActive = ((HiddenField)e.Row.FindControl("HidIsActive")).Value;
+                if (IsActive == "NO")
+                {
+                    e.Row.CssClass = "ExpiredRowStyle";
+                  
+                }
+                else
+                {
+                    e.Row.CssClass = "ActiveRowStyle";
+                   
+                }
+
+              
             }
         }
 
@@ -230,7 +217,7 @@ namespace AccountsModule.Common
 
             Response.ClearContent();
             Response.AddHeader("content-disposition", "attachment; filename=NECCMember.xls");
-            Response.ContentType = "application/excel";
+           Response.ContentType =  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
             StringWriter sWriter = new StringWriter();
             HtmlTextWriter hTextWriter = new HtmlTextWriter(sWriter);
             dgvNECCMember.RenderControl(hTextWriter);

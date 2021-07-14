@@ -87,7 +87,7 @@ namespace AccountsModule.Common
             PrepareGridViewForExport(dgvPaymentReport);
             Response.ClearContent();
             Response.AddHeader("content-disposition", "attachment; filename=AgentPaymentReport.xls");
-            Response.ContentType = "application/excel";
+           Response.ContentType =  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
             StringWriter sWriter = new StringWriter();
             HtmlTextWriter hTextWriter = new HtmlTextWriter(sWriter);
             dgvPaymentReport.RenderControl(hTextWriter);

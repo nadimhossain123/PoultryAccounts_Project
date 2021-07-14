@@ -123,6 +123,7 @@
     <Content Include="Common\DevelopmentFeeMemberReport.aspx" />
     <Content Include="Common\DevelopmentFeeUpdateReport.aspx" />
     <Content Include="Common\FeeCollectionReport.aspx" />
+    <Content Include="Common\GenerateRenewalFees_SpecialCase.aspx" />
     <Content Include="Common\IFBirdPrice.aspx" />
     <Content Include="Common\IFMembers.aspx" />
     <Content Include="Common\IFSendSms.aspx" />
@@ -208,6 +209,8 @@
     <Content Include="SMS\ShowBirdPricePerMonth.aspx" />
     <Content Include="SMS\SMSReport.aspx" />
     <Content Include="SMS\SMSUnlock.aspx" />
+    <Content Include="TestMail.aspx" />
+    <Content Include="TestSMS.aspx" />
     <Content Include="Unauthorized.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -732,6 +735,13 @@
     </Compile>
     <Compile Include="Common\FeeCollectionReport.aspx.designer.cs">
       <DependentUpon>FeeCollectionReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\GenerateRenewalFees_SpecialCase.aspx.cs">
+      <DependentUpon>GenerateRenewalFees_SpecialCase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\GenerateRenewalFees_SpecialCase.aspx.designer.cs">
+      <DependentUpon>GenerateRenewalFees_SpecialCase.aspx</DependentUpon>
     </Compile>
     <Compile Include="Common\IFBirdPrice.aspx.cs">
       <DependentUpon>IFBirdPrice.aspx</DependentUpon>
@@ -1356,6 +1366,20 @@
     </Compile>
     <Compile Include="SMS\SMSUnlock.aspx.designer.cs">
       <DependentUpon>SMSUnlock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestMail.aspx.cs">
+      <DependentUpon>TestMail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestMail.aspx.designer.cs">
+      <DependentUpon>TestMail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestSMS.aspx.cs">
+      <DependentUpon>TestSMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestSMS.aspx.designer.cs">
+      <DependentUpon>TestSMS.aspx</DependentUpon>
     </Compile>
     <Compile Include="Unauthorized.aspx.cs">
       <DependentUpon>Unauthorized.aspx</DependentUpon>

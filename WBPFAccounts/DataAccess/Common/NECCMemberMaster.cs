@@ -9,22 +9,17 @@ namespace DataAccess.Common
 {
     public class NECCMemberMaster
     {
-        public static int Save(Entity.Common.NECCMemberMaster smsmember, DateTime StartDate, DateTime EndDate, string txtRemarks)
+        public static int Save(Entity.Common.NECCMemberMaster smsmember, string txtRemarks)
         {
             using (DataManager oDm = new DataManager())
             {
                 oDm.Add("@pNECCMemberId", SqlDbType.Int, ParameterDirection.InputOutput, smsmember.NECCMemberId);
-                //oDm.Add("@pParentMemberId", SqlDbType.Int, smsmember.ParentMemberId);
                 oDm.Add("@pMemberName", SqlDbType.VarChar, 150, smsmember.MemberName);
                 oDm.Add("@pMobileNo", SqlDbType.VarChar, 20, smsmember.MobileNo);
                 oDm.Add("@pAddress", SqlDbType.VarChar, 500, smsmember.Address);
-                //oDm.Add("@pMemberType", SqlDbType.Int, smsmember.MemberType);
                 oDm.Add("@pIsActive", SqlDbType.Bit, smsmember.IsActive);
-
-                oDm.Add("@pStartDate", SqlDbType.DateTime, StartDate);
-                oDm.Add("@pEndDate", SqlDbType.DateTime, EndDate);
                 oDm.Add("@pRemarks", SqlDbType.VarChar, 500, txtRemarks);
-                oDm.Add("@pCreatedBy", SqlDbType.Int, smsmember.CreatedBy);
+                oDm.Add("@pDistrictId", SqlDbType.Int, smsmember.DistrictId);
 
                 oDm.CommandType = CommandType.StoredProcedure;
 
@@ -59,15 +54,12 @@ namespace DataAccess.Common
                     while (dr.Read())
                     {
                         NECCMember.NECCMemberId = NECCMemberId;
-                        NECCMember.ParentMemberId = (dr[1] == DBNull.Value) ? 0 : int.Parse(dr[1].ToString());
-                        NECCMember.MemberName = (dr[2] == DBNull.Value) ? "" : dr[2].ToString();
-                        NECCMember.MobileNo = (dr[3] == DBNull.Value) ? "" : dr[3].ToString();
-                        NECCMember.Address = (dr[4] == DBNull.Value) ? "" : dr[4].ToString();
-                        //NECCMember.MemberType = (dr[5] == DBNull.Value) ? 0 : int.Parse(dr[5].ToString());
-                        NECCMember.IsActive = (dr[6] == DBNull.Value) ? false : Convert.ToBoolean(dr[6]);
-                        NECCMember.StartDate = (dr[7] == DBNull.Value) ? DateTime.MinValue : Convert.ToDateTime(dr[7]);
-                        NECCMember.EndDate = (dr[8] == DBNull.Value) ? DateTime.MinValue : Convert.ToDateTime(dr[8]);
-                        NECCMember.Remarks = (dr[9] == DBNull.Value) ? "" : dr[9].ToString();
+                        NECCMember.DistrictId = (dr[1] == DBNull.Value) ? 0 : int.Parse(dr["DistrictId"].ToString());
+                        NECCMember.MemberName = (dr[2] == DBNull.Value) ? "" : dr["MemberName"].ToString();
+                        NECCMember.MobileNo = (dr[3] == DBNull.Value) ? "" : dr["MobileNo"].ToString();
+                        NECCMember.Address = (dr[4] == DBNull.Value) ? "" : dr["Address"].ToString();
+                        NECCMember.IsActive = (dr[5] == DBNull.Value) ? false : Convert.ToBoolean(dr["IsActive"]);
+                        NECCMember.Remarks = (dr[6] == DBNull.Value) ? "" : dr["Remarks"].ToString();
 
                     }
                 }
@@ -88,7 +80,7 @@ namespace DataAccess.Common
             }
         }
 
-        public static DataTable GetAllMember(string MemberName, string MobileNo,int DistrictId)
+        public static DataTable GetAllMember(string MemberName, string MobileNo, int DistrictId)
         {
             using (DataManager oDm = new DataManager())
             {

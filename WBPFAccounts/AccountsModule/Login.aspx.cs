@@ -11,6 +11,9 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Xml.Linq;
 using BusinessLayer.Accounts;
+using System.Net;
+using System.IO;
+using System.Text;
 
 namespace AccountsModule
 {
@@ -40,7 +43,11 @@ namespace AccountsModule
 
                 //Added By BASIR --> For Renewal Subscribtions End Reminder
                 BusinessLayer.SendNotificationSMS ObjSms = new BusinessLayer.SendNotificationSMS();
-                ObjSms.SendSMS();
+                //ObjSms.SendSMS();
+
+
+               
+             
             }
         }
 

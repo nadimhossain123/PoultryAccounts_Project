@@ -348,6 +348,15 @@ namespace CollegeERP.UserControl
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl liOutstandingReportNewForMedicine;
 
         /// <summary>
+        /// li5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl li5;
+
+        /// <summary>
         /// liAddNewSMSMember control.
         /// </summary>
         /// <remarks>
@@ -814,6 +823,15 @@ namespace CollegeERP.UserControl
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl liSMSByMemberType;
+
+        /// <summary>
+        /// li4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl li4;
 
         /// <summary>
         /// liNECCSendSMS control.

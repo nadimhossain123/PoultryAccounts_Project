@@ -91,7 +91,7 @@ namespace AccountsModule.Common
             string API = "";
 
             if (API_INDEX == "1")
-                API = string.Format("http://api.mVaayoo.com/mvaayooapi/MessageCompose?user=admin@fourfusionsolutions.com:solution2012&senderID=WBPOLT&receipientno={0}&msgtxt={1}&state=1", mobiles, message);
+                API = string.Format("http://api.mVaayoo.com/mvaayooapi/MessageCompose?user=admin@fourfusionsolutions.com:solution2012&senderID=WBPOLT&receipientno={0}&msgtxt={1}&state=1&template_id=1207161468209950601", mobiles, message);
             else if (API_INDEX == "2")
                 API = string.Format("http://www.krishsms.com/PostSms.aspx?userid=WBPOLT&pass=WBPOLT12345&phone={0}&msg={1}&title=WBPOLT", mobiles, message);
             else if (API_INDEX == "3")
@@ -169,7 +169,14 @@ namespace AccountsModule.Common
                 Eggprice = ObjEggPrice.GetAllById(DDate);
 
 
-                string Str2 = "Bird weight below " + Eggprice.belowWt.ToString() + "kg.=Dist.rate plus Rs." + Eggprice.belowAddRate.ToString() + ".Bird weight upto(1.1kg-1.3kg)=Dist.rate plus Rs." + Eggprice.overAddRate.ToString() + ".NECC Egg Rate:SB-" + Eggprice.NECCPrice.ToString() + ",NAD-" + Eggprice.NECCPrice2.ToString() + ",NB-" + Eggprice.NECCPrice3.ToString();
+               // string Str2 = "Bird weight below " + Eggprice.belowWt.ToString() + "kg.=Dist.rate plus Rs." + Eggprice.belowAddRate.ToString() + ".Bird weight upto(1.1kg-1.3kg)=Dist.rate plus Rs." + Eggprice.overAddRate.ToString() + ".NECC Egg Rate:SB-" + Eggprice.NECCPrice.ToString() + ",NAD-" + Eggprice.NECCPrice2.ToString() + ",NB-" + Eggprice.NECCPrice3.ToString();
+
+                string Str2 = "Bird weight below " + Eggprice.belowWt.ToString() + "kg.=Dist.rate plus Rs." + Eggprice.belowAddRate.ToString() + ".NECC WEST BENGAL Egg Rate of " + DDate.ToString("dd/MM/yyyy") +" Rs. " +Eggprice.NECCPrice.ToString();
+
+               // Bird weight below 1.2kg.= Dist.rate plus Rs.20.00.NECC WEST BENGAL Egg Rate of 09.03.2021 Rs.4.53
+
+
+
                 StrMssg.Append(Str2);
 
                 txtMessageBody.Text = StrMssg.ToString();
@@ -191,7 +198,7 @@ namespace AccountsModule.Common
             {
                 if (i != MessageQueue.Length - 1)
                 {
-                    FitString += MessageQueue[i].Trim() + "\n";
+                    FitString += MessageQueue[i].Trim() + "%n";
                 }
                 else
                 {
@@ -226,8 +233,19 @@ namespace AccountsModule.Common
             BusinessLayer.SMS.SMSAPIConfig objSMSAPIConfig = new BusinessLayer.SMS.SMSAPIConfig();
             API_INDEX = objSMSAPIConfig.GetAll().Select("IsSelected=1")[0]["APIId"].ToString();
 
-            string strUrl;
+
+
+
+            //new api integration by nadim
+            // Message details
+            string apiKey = "MGM5N2U4ZTcyOWJjNjE1NmFkMTUxMmI0ZDY0YzBlZjI=";
+            string sendername = "WBPOLT";
+            string strUrl = string.Format("https://api.textlocal.in/send/?apiKey=" + apiKey + "&sender=" + sendername + "&numbers=" + mobiles + "&message=" + message);
+
             string dataString;
+
+            //string strUrl;
+            //string dataString;
             int MobNoCount = 0;
 
             try
@@ -260,7 +278,8 @@ namespace AccountsModule.Common
                     if (mobiles.Trim().Length > 0)
                     {
                         mobiles = mobiles.Trim().Substring(0, mobiles.Length - 1).Trim();
-                        strUrl = GetHTTPAPI(mobiles, message);
+                        // strUrl = GetHTTPAPI(mobiles, message);
+                         strUrl = string.Format("https://api.textlocal.in/send/?apiKey=" + apiKey + "&sender=" + sendername + "&numbers=" + mobiles + "&message=" + message);
 
                         WebRequest request1 = HttpWebRequest.Create(strUrl);
                         HttpWebResponse response1 = (HttpWebResponse)request1.GetResponse();
@@ -302,7 +321,8 @@ namespace AccountsModule.Common
                                 if (counter == smsPerTrans)
                                 {
                                     mobiles = mobiles.Trim().Substring(0, mobiles.Length - 1).Trim();
-                                    strUrl = GetHTTPAPI(mobiles, message);
+                                    //strUrl = GetHTTPAPI(mobiles, message);
+                                     strUrl = string.Format("https://api.textlocal.in/send/?apiKey=" + apiKey + "&sender=" + sendername + "&numbers=" + mobiles + "&message=" + message);
 
                                     WebRequest request = HttpWebRequest.Create(strUrl);
                                     HttpWebResponse response = (HttpWebResponse)request.GetResponse();
@@ -321,7 +341,8 @@ namespace AccountsModule.Common
                             if (mobiles.Trim().Length > 0)
                             {
                                 mobiles = mobiles.Trim().Substring(0, mobiles.Length - 1).Trim();
-                                strUrl = GetHTTPAPI(mobiles, message);
+                                // strUrl = GetHTTPAPI(mobiles, message);
+                                 strUrl = string.Format("https://api.textlocal.in/send/?apiKey=" + apiKey + "&sender=" + sendername + "&numbers=" + mobiles + "&message=" + message);
 
                                 WebRequest request1 = HttpWebRequest.Create(strUrl);
                                 HttpWebResponse response1 = (HttpWebResponse)request1.GetResponse();

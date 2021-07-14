@@ -285,7 +285,7 @@ namespace DataAccess.Common
 
             }
         }
-
+        
         public static DataSet GetOutstandingReportConsolidatedNew(int StateId, int DistrictId, int BlockId, int MembershipCategoryId, DateTime ToDate, DateTime FromDate, string MemberName, string MemberCode, string MobileNo, int BusinessTypeId, int ReportType)
         {
             using (DataManager oDm = new DataManager())
@@ -591,5 +591,29 @@ namespace DataAccess.Common
                 oDm.ExecuteNonQuery("usp_MemberPaymentGateway_Save");
             }
         }
+
+        public static int GenerateMemberBill_SpecialCase(int BlockId)
+        {
+            using (DataManager oDm = new DataManager())
+            {
+               
+                if (BlockId.Equals(0))
+                    oDm.Add("@pBlockId", SqlDbType.Int, DBNull.Value);
+                else
+                    oDm.Add("@pBlockId", SqlDbType.Int, BlockId);
+
+               
+                oDm.CommandType = CommandType.StoredProcedure;
+
+               int i= oDm.ExecuteNonQuery("MemberBill_Generate_SpecialCase");
+
+                return i;
+
+            }
+        }
+
+
+
+
     }
 }

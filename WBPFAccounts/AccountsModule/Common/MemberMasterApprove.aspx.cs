@@ -195,7 +195,14 @@ namespace AccountsModule.Common
                 sb.Append(@"West Bengal Poultry Federation");
                 string message = sb.ToString();// (sb.ToString().Length > 159) ? sb.ToString().Substring(0, 159) : sb.ToString();
 
-                TriggerSMS(MobileNo, message);
+
+
+                string ApprovalMsg = "Dear" + memberMaster.MemberName.ToString() + ",Your  membership subscription has been approved.Code -" + memberMaster.MemberCode.ToString() + ",Date-" + memberMaster.MembershipDate.ToString("dd/MM/yyyy") + ",Category-" + memberMaster.CategoryName.ToString() + ".Thank You.West Bengal Poultry Federation.";
+
+
+
+
+                TriggerSMS(MobileNo, ApprovalMsg);
                 LoadMemberList();
                 Message.IsSuccess = true;
                 Message.Text = "Approved";

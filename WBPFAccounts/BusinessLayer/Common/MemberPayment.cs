@@ -113,5 +113,11 @@ namespace BusinessLayer.Common
         {
             DataAccess.Common.MemberPayment.PaymentResponseSave(payment);
         }
+
+        public int GenerateMemberBill_SpecialCase( int BlockId)
+        {
+            return DataAccess.Common.MemberPayment.GenerateMemberBill_SpecialCase(BlockId);
+
+        }
     }
 }

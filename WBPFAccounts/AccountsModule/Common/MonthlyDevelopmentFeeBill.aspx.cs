@@ -184,7 +184,7 @@ namespace AccountsModule.Common
                     if (!string.IsNullOrEmpty(ToAddress))
                     {
                         string MessageContent = GetMessageContent(dgvMemberMonthlyBill.Rows[i]);
-                        SendEmail(ToAddress, MessageContent);
+                       SendEmail(ToAddress, MessageContent);
                     }
                     if (!string.IsNullOrEmpty(MobileNo))
                     {
@@ -239,7 +239,12 @@ namespace AccountsModule.Common
             sb.Append(@"West Bengal Poultry Federation");
             string message = sb.ToString();
 
-            return sb.ToString();
+
+
+            string DevFeeMsg = "Dear " + GVR.Cells[3].Text.ToString() + ",Your monthly development fee bill has been generated for " + GVR.Cells[5].Text + " " + GVR.Cells[6].Text + " and sent to your registered email.Bill Amount - Rs. " + GVR.Cells[10].Text.ToString() + "Bill Date -   01, "+ GVR.Cells[5].Text + " " + GVR.Cells[6].Text  + "Thank You.West Bengal Poultry Federation";
+
+
+            return DevFeeMsg;
         }
 
         private string GetMessageContent(GridViewRow GVR)
@@ -349,7 +354,7 @@ namespace AccountsModule.Common
             sb.Append(@"   </td>");
             sb.Append(@"  </tr>");
             sb.Append(@"  <tr>");
-            sb.Append(@"      <td>                1. Payments should be made by A/C payee cheque only.");
+            sb.Append(@"      <td>                1. Payments can be made by A/C payee cheque/NEFT/RTGS/Online Payment.");
             sb.Append(@"     </td>");
             sb.Append(@"     <td>");
             sb.Append(@"     </td>");

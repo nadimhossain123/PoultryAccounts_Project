@@ -58,6 +58,9 @@
             <li id="liMemberMonthlyBill" runat="server"><a href="/Common/MemberBillDetails.aspx">Member Monthly Bill</a></li>
             <li id="liOutstandingReportNew" runat="server"><a href="/Common/OutstandingReportNew.aspx">Member Outstanding Report new</a></li>
             <li id="liOutstandingReportNewForMedicine" runat="server"><a href="/Common/OutstandingReportNewForMedicine.aspx">Member Outstanding Report old For Medicine Representatives</a></li>
+             <li id="li5" runat="server"><a href="/Common/GenerateRenewalFees_SpecialCase.aspx">Member Bill Genrate (Special Case Block Wise)</a></li>
+            
+            
             <li>
                 <a href="#"><< SMS</a>
                 <ul>
@@ -154,6 +157,7 @@
             <li id="liSMSAPIConfig" runat="server"><a href="/Common/SMSAPIConfig.aspx">SMS API Configuration</a></li>
             <li id="liSendSMS" runat="server"><a href="/Common/SendSMS.aspx">Send SMS</a></li>
             <li id="liSMSByMemberType" runat="server"><a href="/Common/SendSMSByMemberType.aspx"> Member Wise Send SMS</a></li>
+            <li id="li4" runat="server"><a href="/Common/NECCMember.aspx">NECC Member</a></li>
             <li id="liNECCSendSMS" runat="server"><a href="/Common/NECCSendSMS.aspx"> NECC Send SMS</a></li>
             <%--<li id="liSendSMSToAllMember" runat="server"><a href="/Common/SendSMSToAllMember.aspx">Send SMS To All Member</a></li>--%>
             <li id="liMemberLogDetails" runat="server"><a href="/Common/MemberLogDetails.aspx">Member Log Details</a></li>

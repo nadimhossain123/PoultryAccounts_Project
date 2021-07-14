@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AccountsModule.Common {
-    
-    
-    public partial class NECCMember {
-        
+namespace AccountsModule.Common
+{
+
+
+    public partial class NECCMember
+    {
+
         /// <summary>
         /// ToolScript1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.ToolkitScriptManager ToolScript1;
-        
+
         /// <summary>
         /// Message control.
         /// </summary>
@@ -29,16 +31,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::CollegeERP.UserControl.Message Message;
-        
-        /// <summary>
-        /// ddlMember control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox ddlMember;
-        
+
         /// <summary>
         /// txtMemberName control.
         /// </summary>
@@ -47,7 +40,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMemberName;
-        
+
         /// <summary>
         /// txtMobileNo control.
         /// </summary>
@@ -56,7 +49,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMobileNo;
-        
+
         /// <summary>
         /// txtAddress control.
         /// </summary>
@@ -65,25 +58,16 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAddress;
-        
+
         /// <summary>
-        /// txtStartDate control.
+        /// ddlDistrict2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStartDate;
-        
-        /// <summary>
-        /// CalendarExtenderStartDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender CalendarExtenderStartDate;
-        
+        protected global::System.Web.UI.WebControls.DropDownList ddlDistrict2;
+
         /// <summary>
         /// chkIsActive control.
         /// </summary>
@@ -92,25 +76,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkIsActive;
-        
-        /// <summary>
-        /// txtEndDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEndDate;
-        
-        /// <summary>
-        /// CalendarExtender1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
-        
+
         /// <summary>
         /// txtRemarks control.
         /// </summary>
@@ -119,7 +85,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRemarks;
-        
+
         /// <summary>
         /// btnSave control.
         /// </summary>
@@ -128,7 +94,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSave;
-        
+
         /// <summary>
         /// btnCancel control.
         /// </summary>
@@ -137,7 +103,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancel;
-        
+
         /// <summary>
         /// txtSearchMemberName control.
         /// </summary>
@@ -146,7 +112,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSearchMemberName;
-        
+
         /// <summary>
         /// txtSearchMobileNo control.
         /// </summary>
@@ -155,7 +121,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSearchMobileNo;
-        
+
         /// <summary>
         /// ddlDistrict control.
         /// </summary>
@@ -164,7 +130,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlDistrict;
-        
+
         /// <summary>
         /// btnSearch control.
         /// </summary>
@@ -173,7 +139,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearch;
-        
+
         /// <summary>
         /// btnDownload control.
         /// </summary>
@@ -182,7 +148,7 @@ namespace AccountsModule.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnDownload;
-        
+
         /// <summary>
         /// dgvNECCMember control.
         /// </summary>
